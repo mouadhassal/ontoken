@@ -89,3 +89,26 @@ Hypotheses H2 and H3 were formed after seeing this one dev file and are labelled
 ## Pins
 
 The SHA-256 values are listed in `PREREGISTRATION.sha256`, written by the freeze commit.
+
+---
+
+## Amendments after the confirmatory run (10 October 2026)
+
+These were made after the test data existed. The frozen code is unchanged and still pinned by `PREREGISTRATION.sha256`. Frozen results are in `results/verdicts.json`; amended results are in `results/verdicts_v2.json`. Both are reported.
+
+**Amendment 2: text-colour recovery bug (`src/calibrate_v2.ts`).**
+- *The bug.* Theme variables used only for text (`--foreground`, `--*-foreground`) were recovered from thin glyph pixels, where the background often won the vote. In I1-G, `--foreground` came out as the paper colour #faf9f2. That made dark text "invisible" in the calibrated render and produced false contrast failures: 205 in the frozen run against 8 after the fix.
+- *The fix.* Each text variable is re-voted using only pixels whose Flowstep colour differs from the background known to be behind them. Nothing else is re-fitted.
+- *The check.* I1-G `--foreground` is recovered as #111111, which is the brand's `ink` exactly.
+- *Verdict change.* H4b goes from PASS (205 → 2) to **FAIL (8 → 2, a 75% reduction against the 80% bar)**. No other verdict changes.
+
+**Amendment 3: fonts.**
+- *Serif mapping.* Pixel losses could not identify the serif reliably, because changing the font reflows the layout. So for Ink, `font-serif` is mapped to the brand's serif (Source Serif 4). The match was checked by eye against Flowstep's PNGs.
+- *Repair dialect.* Repair output sent to Flowstep uses `font-['X']`. Flowstep's renderer ignores Tailwind v4's `font-[family-name:X]`, which the frozen repair wrote. Because of this, the frozen repair turned Ink's serif headlines into sans in Flowstep.
+- *Unavailable fonts.* The v2 repair does not insert fonts that Flowstep's renderer cannot paint. Manrope is not available (see the exploratory font finding), and the frozen repair's Manrope classes turned Moss text into a Times-like fallback in Flowstep.
+
+**Exploratory X1 (after H5 failed): round trip by in-place replace.**
+- *Why H5 failed.* Flowstep stores the theme on each AI-generated screen, not on the file. `add-screen-jsx` (the pre-registered route) starts from the default theme, so every on-token colour the repair left as a theme variable came back wrong.
+- *What X1 does.* It writes the repaired JSX over the original screen with `replace-screen-jsx`, which keeps the screen's theme.
+
+**Exploratory: font availability (`study/fonts.ts`).** The brand fonts Inter, DM Sans and Source Serif 4 render in Flowstep's PNGs; Manrope never does. In M1-G, which names `font-[Manrope]`, Flowstep paints a Times-like fallback, because the class carries no fallback stack.

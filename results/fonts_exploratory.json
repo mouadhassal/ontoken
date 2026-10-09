@@ -1,0 +1,162 @@
+[
+  {
+    "id": "E1-G",
+    "brand": "ember",
+    "arm": "G",
+    "family": "DM Sans",
+    "screensNamingIt": 0,
+    "l1With": 17.224628771461486,
+    "l1Without": 18.657192912801502,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "E1-N",
+    "brand": "ember",
+    "arm": "N",
+    "family": "DM Sans",
+    "screensNamingIt": 0,
+    "l1With": 5.162775680877777,
+    "l1Without": 5.162775680877777,
+    "flowstepHasIt": false
+  },
+  {
+    "id": "E2-G",
+    "brand": "ember",
+    "arm": "G",
+    "family": "DM Sans",
+    "screensNamingIt": 3,
+    "l1With": 3.9769725893260266,
+    "l1Without": 18.042453791992205,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "F1-G",
+    "brand": "fjord",
+    "arm": "G",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 3.9610469956135077,
+    "l1Without": 6.683220397925619,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "F1-N",
+    "brand": "fjord",
+    "arm": "N",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 3.457085008801575,
+    "l1Without": 5.805834883692168,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "F2-G",
+    "brand": "fjord",
+    "arm": "G",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 1.5784549793647413,
+    "l1Without": 2.1399946896729105,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "I1-G",
+    "brand": "ink",
+    "arm": "G",
+    "family": "Source Serif 4",
+    "screensNamingIt": 0,
+    "l1With": 14.607163996666747,
+    "l1Without": 16.062367971435357,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "I1-G",
+    "brand": "ink",
+    "arm": "G",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 14.116633544857217,
+    "l1Without": 16.062367971435357,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "I1-N",
+    "brand": "ink",
+    "arm": "N",
+    "family": "Source Serif 4",
+    "screensNamingIt": 0,
+    "l1With": 6.044814843941038,
+    "l1Without": 6.044814843941038,
+    "flowstepHasIt": false
+  },
+  {
+    "id": "I1-N",
+    "brand": "ink",
+    "arm": "N",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 6.044814843941038,
+    "l1Without": 11.266534011775619,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "I2-G",
+    "brand": "ink",
+    "arm": "G",
+    "family": "Source Serif 4",
+    "screensNamingIt": 0,
+    "l1With": 4.566901425364452,
+    "l1Without": 4.7638803462090715,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "I2-G",
+    "brand": "ink",
+    "arm": "G",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 4.513236417343727,
+    "l1Without": 5.035466905593359,
+    "flowstepHasIt": true
+  },
+  {
+    "id": "M1-G",
+    "brand": "moss",
+    "arm": "G",
+    "family": "Manrope",
+    "screensNamingIt": 2,
+    "l1With": 4.244899639316904,
+    "l1Without": 3.895305133918369,
+    "flowstepHasIt": false
+  },
+  {
+    "id": "M1-N",
+    "brand": "moss",
+    "arm": "N",
+    "family": "Manrope",
+    "screensNamingIt": 0,
+    "l1With": 5.342998039417739,
+    "l1Without": 5.342998039417739,
+    "flowstepHasIt": false
+  },
+  {
+    "id": "M2-G",
+    "brand": "moss",
+    "arm": "G",
+    "family": "Manrope",
+    "screensNamingIt": 0,
+    "l1With": 4.938027879673148,
+    "l1Without": 4.938027879673148,
+    "flowstepHasIt": false
+  },
+  {
+    "id": "dev-D1-G",
+    "brand": "fjord",
+    "arm": "G",
+    "family": "Inter",
+    "screensNamingIt": 0,
+    "l1With": 3.252544802051274,
+    "l1Without": 6.966203814388521,
+    "flowstepHasIt": true
+  }
+]

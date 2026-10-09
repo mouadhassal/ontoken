@@ -1,0 +1,644 @@
+{
+  "id": "dev-D1-G",
+  "job": {
+    "kind": "generate",
+    "id": "dev-D1-G",
+    "brief": {
+      "id": "D1",
+      "brand": "fjord",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a banking app sign-in: email and password sign-in, a two-step verification code entry, and a welcome-back home screen. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "dev"
+  },
+  "brand": "fjord",
+  "arm": "G",
+  "calibration": {
+    "vars": {
+      "--font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+      "--background": "#ffffff",
+      "--primary": "#006469",
+      "--primary-foreground": "#ffffff",
+      "--foreground": "#001819",
+      "--muted-foreground": "#436161",
+      "--border": "#cddbda",
+      "--input": "#cddbda",
+      "--secondary": "#deefef",
+      "--accent": "#e89d00",
+      "--accent-foreground": "#001819",
+      "--secondary-foreground": "#003737",
+      "--muted": "#e6f1f1",
+      "--destructive": "#9e1614",
+      "--radius-sm": "2px",
+      "--radius-md": "3px",
+      "--radius-lg": "4px",
+      "--radius-xl": "6px"
+    },
+    "font": "Inter",
+    "serif": null,
+    "agreement": {
+      "--background": 0.9929842197649054,
+      "--primary": 0.9868645754420206,
+      "--primary-foreground": 0.7278481012658228,
+      "--foreground": 0.7526501766784452,
+      "--muted-foreground": 0.5402010050251256,
+      "--border": 1,
+      "--input": 1,
+      "--secondary": 0.9979919678714859,
+      "--accent": 0.9572649572649573,
+      "--accent-foreground": 0.8,
+      "--secondary-foreground": 0.5833333333333334,
+      "--muted": 0.9804121762147854,
+      "--destructive": 0.6195652173913043
+    },
+    "support": {
+      "--background": 901254,
+      "--primary": 77881,
+      "--primary-foreground": 948,
+      "--foreground": 4528,
+      "--muted-foreground": 398,
+      "--border": 2526,
+      "--input": 864,
+      "--secondary": 996,
+      "--accent": 117,
+      "--accent-foreground": 5,
+      "--secondary-foreground": 12,
+      "--muted": 26445,
+      "--destructive": 92
+    },
+    "diff": [
+      0.012064961235014857,
+      0.00973393900064893,
+      0.023398453954483873
+    ],
+    "l1": [
+      2.6001561604638894,
+      2.043557005210409,
+      5.113921240479525
+    ]
+  },
+  "screens": [
+    {
+      "screen": 1,
+      "screenId": "3e49a0ba-129f-49f8-a80e-b87e450b0aab",
+      "before": {
+        "color": {
+          "n": 21,
+          "on": 7,
+          "rate": 0.3333333333333333
+        },
+        "colorLenient": {
+          "n": 21,
+          "on": 7,
+          "rate": 0.3333333333333333
+        },
+        "type": {
+          "n": 22,
+          "on": 22,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 28,
+          "on": 28,
+          "rate": 1
+        },
+        "radius": {
+          "n": 4,
+          "on": 3,
+          "rate": 0.75
+        },
+        "overall": {
+          "n": 75,
+          "on": 60,
+          "rate": 0.8
+        },
+        "contrastN": 11,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 21,
+          "on": 21,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 21,
+          "on": 21,
+          "rate": 1
+        },
+        "type": {
+          "n": 22,
+          "on": 22,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 28,
+          "on": 28,
+          "rate": 1
+        },
+        "radius": {
+          "n": 4,
+          "on": 4,
+          "rate": 1
+        },
+        "overall": {
+          "n": 75,
+          "on": 75,
+          "rate": 1
+        },
+        "contrastN": 11,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9481464959076067,
+      "pixelOursBefore": 0.9483244821267741,
+      "pixelOursAfter": 1,
+      "changed": 0.07599303254892585,
+      "changedVisible": 0.000042692714915126885,
+      "passes": 1,
+      "editedNodes": 14,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/bg",
+          "value": "#006469"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "3px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#001819"
+        }
+      ]
+    },
+    {
+      "screen": 2,
+      "screenId": "613e1995-ce8e-47fe-b95b-41d9406eeca7",
+      "before": {
+        "color": {
+          "n": 32,
+          "on": 15,
+          "rate": 0.46875
+        },
+        "colorLenient": {
+          "n": 32,
+          "on": 15,
+          "rate": 0.46875
+        },
+        "type": {
+          "n": 28,
+          "on": 28,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 23,
+          "on": 23,
+          "rate": 1
+        },
+        "radius": {
+          "n": 8,
+          "on": 0,
+          "rate": 0
+        },
+        "overall": {
+          "n": 91,
+          "on": 66,
+          "rate": 0.7252747252747253
+        },
+        "contrastN": 14,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 32,
+          "on": 32,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 32,
+          "on": 32,
+          "rate": 1
+        },
+        "type": {
+          "n": 28,
+          "on": 28,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 23,
+          "on": 23,
+          "rate": 1
+        },
+        "radius": {
+          "n": 2,
+          "on": 2,
+          "rate": 1
+        },
+        "overall": {
+          "n": 85,
+          "on": 85,
+          "rate": 1
+        },
+        "contrastN": 14,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9636594190749947,
+      "pixelOursBefore": 0.9638444523201388,
+      "pixelOursAfter": 1,
+      "changed": 0.05984664776802486,
+      "changedVisible": 0.00003984653392078509,
+      "passes": 1,
+      "editedNodes": 17,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/bg",
+          "value": "#006469"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "3px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "2px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "2px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "2px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "2px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "2px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "2px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006469"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "4px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#001819"
+        }
+      ]
+    },
+    {
+      "screen": 3,
+      "screenId": "3c2ec42e-0a49-49ba-8426-6b2423d6f2d8",
+      "before": {
+        "color": {
+          "n": 50,
+          "on": 15,
+          "rate": 0.3
+        },
+        "colorLenient": {
+          "n": 50,
+          "on": 16,
+          "rate": 0.32
+        },
+        "type": {
+          "n": 54,
+          "on": 54,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 78,
+          "on": 77,
+          "rate": 0.9871794871794872
+        },
+        "radius": {
+          "n": 5,
+          "on": 4,
+          "rate": 0.8
+        },
+        "overall": {
+          "n": 187,
+          "on": 150,
+          "rate": 0.8021390374331551
+        },
+        "contrastN": 27,
+        "contrastFail": 1,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 50,
+          "on": 50,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 50,
+          "on": 50,
+          "rate": 1
+        },
+        "type": {
+          "n": 54,
+          "on": 54,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 78,
+          "on": 78,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 187,
+          "on": 187,
+          "rate": 1
+        },
+        "contrastN": 27,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.8567205893717318,
+      "pixelOursBefore": 0.8570067346048871,
+      "pixelOursAfter": 1,
+      "changed": 0.1764006056673156,
+      "changedVisible": 0.0010246251579630451,
+      "passes": 2,
+      "editedNodes": 29,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "spacing/pb",
+          "value": "96px"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006469"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "3px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#e89d00"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#003737"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#b3d0d2"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006469"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#9e1614"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#9e1614"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#436161"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001819"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#001819"
+        }
+      ]
+    }
+  ],
+  "seconds": 3
+}

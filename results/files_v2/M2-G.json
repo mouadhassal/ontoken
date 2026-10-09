@@ -1,0 +1,661 @@
+{
+  "id": "M2-G",
+  "job": {
+    "kind": "generate",
+    "id": "M2-G",
+    "brief": {
+      "id": "M2",
+      "brand": "moss",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a sleep and mood journal: log last night's sleep, a mood check-in, and 30-day trends. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "brand": "moss",
+  "arm": "G",
+  "calibration": {
+    "vars": {
+      "--font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+      "--background": "#f6faf1",
+      "--secondary": "#e7f1d8",
+      "--primary": "#235e28",
+      "--border": "#d5dfc6",
+      "--muted-foreground": "#485c44",
+      "--foreground": "#1a2517",
+      "--card": "#ffffff",
+      "--card-foreground": "#1a2517",
+      "--primary-foreground": "#ffffff",
+      "--secondary-foreground": "#103a14",
+      "--input": "#d5dfc6",
+      "--accent": "#6f48c1"
+    },
+    "font": "Inter",
+    "serif": null,
+    "agreement": {
+      "--background": 0.9754613093561387,
+      "--secondary": 0.9429,
+      "--primary": 0.9241256203534789,
+      "--border": 0.8463603818615751,
+      "--muted-foreground": 0.5118110236220472,
+      "--foreground": 0.5137429264349233,
+      "--card": 0.9855081982192931,
+      "--card-foreground": 0.6989319092122831,
+      "--primary-foreground": 0.4358974358974359,
+      "--secondary-foreground": 0.5532544378698225,
+      "--input": 1,
+      "--accent": 0.9738430583501007
+    },
+    "support": {
+      "--background": 532506,
+      "--secondary": 40000,
+      "--primary": 50979,
+      "--border": 6704,
+      "--muted-foreground": 1016,
+      "--foreground": 2474,
+      "--card": 350198,
+      "--card-foreground": 1498,
+      "--primary-foreground": 117,
+      "--secondary-foreground": 338,
+      "--input": 868,
+      "--accent": 497
+    },
+    "diff": [
+      0.0417677060919658,
+      0.015283991939615424,
+      0.017515727149377082
+    ],
+    "l1": [
+      8.848937046271313,
+      2.855383646223497,
+      3.180577827117854
+    ]
+  },
+  "screens": [
+    {
+      "screen": 1,
+      "screenId": "888a9934-cf52-4a2d-96f2-b2b85940deeb",
+      "before": {
+        "color": {
+          "n": 37,
+          "on": 19,
+          "rate": 0.5135135135135135
+        },
+        "colorLenient": {
+          "n": 37,
+          "on": 19,
+          "rate": 0.5135135135135135
+        },
+        "type": {
+          "n": 38,
+          "on": 38,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 50,
+          "on": 42,
+          "rate": 0.84
+        },
+        "radius": {
+          "n": 4,
+          "on": 2,
+          "rate": 0.5
+        },
+        "overall": {
+          "n": 129,
+          "on": 101,
+          "rate": 0.7829457364341085
+        },
+        "contrastN": 19,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 37,
+          "on": 37,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 37,
+          "on": 37,
+          "rate": 1
+        },
+        "type": {
+          "n": 38,
+          "on": 38,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 50,
+          "on": 50,
+          "rate": 1
+        },
+        "radius": {
+          "n": 4,
+          "on": 4,
+          "rate": 1
+        },
+        "overall": {
+          "n": 129,
+          "on": 129,
+          "rate": 1
+        },
+        "contrastN": 19,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.8205126529972266,
+      "pixelOursBefore": 0.8301926977355313,
+      "pixelOursAfter": 1,
+      "changed": 0.18965811673895966,
+      "changedVisible": 0.0009506244521101586,
+      "passes": 1,
+      "editedNodes": 15,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "spacing/pt",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pr",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pb",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pl",
+          "value": "12px"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#e9e8ec"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#103a14"
+        },
+        {
+          "kind": "spacing/pt",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pr",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pb",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pl",
+          "value": "12px"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        }
+      ]
+    },
+    {
+      "screen": 2,
+      "screenId": "acd64562-da87-4b1b-ab9a-abcfdcbd160b",
+      "before": {
+        "color": {
+          "n": 40,
+          "on": 25,
+          "rate": 0.625
+        },
+        "colorLenient": {
+          "n": 40,
+          "on": 26,
+          "rate": 0.65
+        },
+        "type": {
+          "n": 36,
+          "on": 36,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "radius": {
+          "n": 3,
+          "on": 3,
+          "rate": 1
+        },
+        "overall": {
+          "n": 119,
+          "on": 104,
+          "rate": 0.8739495798319328
+        },
+        "contrastN": 18,
+        "contrastFail": 1,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "type": {
+          "n": 36,
+          "on": 36,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "radius": {
+          "n": 3,
+          "on": 3,
+          "rate": 1
+        },
+        "overall": {
+          "n": 119,
+          "on": 119,
+          "rate": 1
+        },
+        "contrastN": 18,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9446486507058066,
+      "pixelOursBefore": 0.9447045297185362,
+      "pixelOursAfter": 1,
+      "changed": 0.07232145906622493,
+      "changedVisible": 0.0010189327959743617,
+      "passes": 1,
+      "editedNodes": 11,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#8d928b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        }
+      ]
+    },
+    {
+      "screen": 3,
+      "screenId": "7a15173a-08b1-40e2-9a11-1630696f5666",
+      "before": {
+        "color": {
+          "n": 75,
+          "on": 20,
+          "rate": 0.26666666666666666
+        },
+        "colorLenient": {
+          "n": 75,
+          "on": 20,
+          "rate": 0.26666666666666666
+        },
+        "type": {
+          "n": 42,
+          "on": 42,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 58,
+          "on": 58,
+          "rate": 1
+        },
+        "radius": {
+          "n": 6,
+          "on": 1,
+          "rate": 0.16666666666666666
+        },
+        "overall": {
+          "n": 181,
+          "on": 121,
+          "rate": 0.6685082872928176
+        },
+        "contrastN": 21,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 75,
+          "on": 75,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 75,
+          "on": 75,
+          "rate": 1
+        },
+        "type": {
+          "n": 42,
+          "on": 42,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 58,
+          "on": 58,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 180,
+          "on": 180,
+          "rate": 1
+        },
+        "contrastN": 21,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9604069555603021,
+      "pixelOursBefore": 0.9598345501833109,
+      "pixelOursAfter": 0.9998682914897487,
+      "changed": 0.08062476871839151,
+      "changedVisible": 0.0007169729863081288,
+      "passes": 1,
+      "editedNodes": 51,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/border",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "4px"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        }
+      ]
+    }
+  ],
+  "seconds": 3
+}

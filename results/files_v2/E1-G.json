@@ -1,0 +1,774 @@
+{
+  "id": "E1-G",
+  "job": {
+    "kind": "generate",
+    "id": "E1-G",
+    "brief": {
+      "id": "E1",
+      "brand": "ember",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a food delivery app: a restaurant list with search and categories, a restaurant menu, and a cart with checkout summary. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "brand": "ember",
+  "arm": "G",
+  "calibration": {
+    "vars": {
+      "--font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+      "--muted-foreground": "#634938",
+      "--primary": "#b91700",
+      "--primary-foreground": "#ffffff",
+      "--card-foreground": "#1a0f07",
+      "--border": "#e9d8c2",
+      "--card": "#ffffff",
+      "--background": "#fefaf1",
+      "--foreground": "#1a0f07",
+      "--muted": "#fdecd5",
+      "--radius-lg": "16px",
+      "--radius-2xl": "24px"
+    },
+    "font": "Inter",
+    "serif": null,
+    "agreement": {
+      "--muted-foreground": 0.747588424437299,
+      "--primary": 0.9747075670266726,
+      "--primary-foreground": 0.5977011494252874,
+      "--card-foreground": 0.7615384615384615,
+      "--border": 1,
+      "--card": 0.9899852443433335,
+      "--background": 0.9934550559864559,
+      "--foreground": 0.5505761843790012,
+      "--muted": 0.9966049793636
+    },
+    "support": {
+      "--muted-foreground": 622,
+      "--primary": 28981,
+      "--primary-foreground": 348,
+      "--card-foreground": 390,
+      "--border": 4844,
+      "--card": 251429,
+      "--background": 145303,
+      "--foreground": 2343,
+      "--muted": 30044
+    },
+    "diff": [
+      0.20340432668120073,
+      0.11476635808300271,
+      0.020207632900530337
+    ],
+    "l1": [
+      26.153311159558015,
+      17.227368781969197,
+      4.040220668570437
+    ]
+  },
+  "screens": [
+    {
+      "screen": 1,
+      "screenId": "4fb9fb31-46fb-4afe-865e-bd120362b450",
+      "before": {
+        "color": {
+          "n": 53,
+          "on": 44,
+          "rate": 0.8301886792452831
+        },
+        "colorLenient": {
+          "n": 53,
+          "on": 44,
+          "rate": 0.8301886792452831
+        },
+        "type": {
+          "n": 52,
+          "on": 22,
+          "rate": 0.4230769230769231
+        },
+        "spacing": {
+          "n": 64,
+          "on": 62,
+          "rate": 0.96875
+        },
+        "radius": {
+          "n": 6,
+          "on": 2,
+          "rate": 0.3333333333333333
+        },
+        "overall": {
+          "n": 175,
+          "on": 130,
+          "rate": 0.7428571428571429
+        },
+        "contrastN": 26,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 53,
+          "on": 53,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 53,
+          "on": 53,
+          "rate": 1
+        },
+        "type": {
+          "n": 52,
+          "on": 52,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 64,
+          "on": 64,
+          "rate": 1
+        },
+        "radius": {
+          "n": 6,
+          "on": 6,
+          "rate": 1
+        },
+        "overall": {
+          "n": 175,
+          "on": 175,
+          "rate": 1
+        },
+        "contrastN": 26,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 1,
+      "pixelOursBefore": 1,
+      "pixelOursAfter": 1,
+      "changed": 0.060271675331209126,
+      "changedVisible": 0.024316619151433842,
+      "passes": 1,
+      "editedNodes": 32,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "spacing/pb",
+          "value": "48px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "spacing/pl",
+          "value": "48px"
+        },
+        {
+          "kind": "type/size",
+          "value": "14px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "6px"
+        },
+        {
+          "kind": "type/size",
+          "value": "14px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "6px"
+        },
+        {
+          "kind": "type/size",
+          "value": "14px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "6px"
+        },
+        {
+          "kind": "type/size",
+          "value": "14px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "6px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#634938"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#634938"
+        }
+      ]
+    },
+    {
+      "screen": 2,
+      "screenId": "8e8df8ce-bd44-4984-9214-299a2b51e9de",
+      "before": {
+        "color": {
+          "n": 46,
+          "on": 41,
+          "rate": 0.8913043478260869
+        },
+        "colorLenient": {
+          "n": 46,
+          "on": 41,
+          "rate": 0.8913043478260869
+        },
+        "type": {
+          "n": 48,
+          "on": 20,
+          "rate": 0.4166666666666667
+        },
+        "spacing": {
+          "n": 47,
+          "on": 47,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 146,
+          "on": 113,
+          "rate": 0.773972602739726
+        },
+        "contrastN": 24,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 46,
+          "on": 46,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 46,
+          "on": 46,
+          "rate": 1
+        },
+        "type": {
+          "n": 48,
+          "on": 48,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 47,
+          "on": 47,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 146,
+          "on": 146,
+          "rate": 1
+        },
+        "contrastN": 24,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 1,
+      "pixelOursBefore": 1,
+      "pixelOursAfter": 0.9998694404837574,
+      "changed": 0.09697564807541241,
+      "changedVisible": 0.041675831369468445,
+      "passes": 1,
+      "editedNodes": 27,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#634938"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#634938"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        }
+      ]
+    },
+    {
+      "screen": 3,
+      "screenId": "0038a6fc-2b76-4162-bf99-e7fceca355b1",
+      "before": {
+        "color": {
+          "n": 64,
+          "on": 31,
+          "rate": 0.484375
+        },
+        "colorLenient": {
+          "n": 64,
+          "on": 31,
+          "rate": 0.484375
+        },
+        "type": {
+          "n": 62,
+          "on": 31,
+          "rate": 0.5
+        },
+        "spacing": {
+          "n": 67,
+          "on": 66,
+          "rate": 0.9850746268656716
+        },
+        "radius": {
+          "n": 8,
+          "on": 8,
+          "rate": 1
+        },
+        "overall": {
+          "n": 201,
+          "on": 136,
+          "rate": 0.6766169154228856
+        },
+        "contrastN": 31,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 64,
+          "on": 64,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 64,
+          "on": 64,
+          "rate": 1
+        },
+        "type": {
+          "n": 62,
+          "on": 62,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 67,
+          "on": 67,
+          "rate": 1
+        },
+        "radius": {
+          "n": 8,
+          "on": 8,
+          "rate": 1
+        },
+        "overall": {
+          "n": 201,
+          "on": 201,
+          "rate": 1
+        },
+        "contrastN": 31,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 1,
+      "pixelOursBefore": 1,
+      "pixelOursAfter": 1,
+      "changed": 0.05797825200106911,
+      "changedVisible": 0.025902532577452043,
+      "passes": 1,
+      "editedNodes": 40,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "spacing/pb",
+          "value": "96px"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#634938"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1f5f26"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#634938"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f07"
+        }
+      ]
+    }
+  ],
+  "seconds": 5
+}

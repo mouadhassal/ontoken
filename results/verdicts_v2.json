@@ -1,0 +1,1534 @@
+{
+  "files": [
+    "E1-G",
+    "E1-N",
+    "E2-G",
+    "F1-G-e1",
+    "F1-G-e2",
+    "F1-G",
+    "F1-N",
+    "F2-G",
+    "I1-G",
+    "I1-N",
+    "I2-G",
+    "M1-G",
+    "M1-N",
+    "M2-G"
+  ],
+  "generatedAt": "2026-10-09T20:57:06.853Z",
+  "H1": {
+    "pairs": [
+      {
+        "brief": "F1",
+        "screen": 1,
+        "colorG": 0.6037735849056604,
+        "colorN": 0.16393442622950818,
+        "nonColorG": 0.967741935483871,
+        "nonColorN": 0.9576271186440678
+      },
+      {
+        "brief": "F1",
+        "screen": 2,
+        "colorG": 0.5365853658536586,
+        "colorN": 0.10810810810810811,
+        "nonColorG": 0.98989898989899,
+        "nonColorN": 0.9655172413793104
+      },
+      {
+        "brief": "F1",
+        "screen": 3,
+        "colorG": 0.4827586206896552,
+        "colorN": 0.07692307692307693,
+        "nonColorG": 1,
+        "nonColorN": 0.9752066115702479
+      },
+      {
+        "brief": "E1",
+        "screen": 1,
+        "colorG": 0.8301886792452831,
+        "colorN": 0.6375,
+        "nonColorG": 0.7049180327868853,
+        "nonColorN": 0.5231788079470199
+      },
+      {
+        "brief": "E1",
+        "screen": 2,
+        "colorG": 0.8913043478260869,
+        "colorN": 0.71875,
+        "nonColorG": 0.72,
+        "nonColorN": 0.5116279069767442
+      },
+      {
+        "brief": "E1",
+        "screen": 3,
+        "colorG": 0.484375,
+        "colorN": 0.8095238095238095,
+        "nonColorG": 0.7664233576642335,
+        "nonColorN": 0.5196850393700787
+      },
+      {
+        "brief": "M1",
+        "screen": 1,
+        "colorG": 0.8113207547169812,
+        "colorN": 0.1746031746031746,
+        "nonColorG": 1,
+        "nonColorN": 0.6050420168067226
+      },
+      {
+        "brief": "M1",
+        "screen": 2,
+        "colorG": 0.25,
+        "colorN": 0.14,
+        "nonColorG": 0.8421052631578947,
+        "nonColorN": 0.7904761904761904
+      },
+      {
+        "brief": "M1",
+        "screen": 3,
+        "colorG": 0.2835820895522388,
+        "colorN": 0.13559322033898305,
+        "nonColorG": 0.875,
+        "nonColorN": 0.8805970149253731
+      },
+      {
+        "brief": "I1",
+        "screen": 1,
+        "colorG": 0.4444444444444444,
+        "colorN": 0.1774193548387097,
+        "nonColorG": 1,
+        "nonColorN": 0.752
+      },
+      {
+        "brief": "I1",
+        "screen": 2,
+        "colorG": 0.5882352941176471,
+        "colorN": 0.17857142857142858,
+        "nonColorG": 1,
+        "nonColorN": 0.7258064516129032
+      },
+      {
+        "brief": "I1",
+        "screen": 3,
+        "colorG": 0.4782608695652174,
+        "colorN": 0.2222222222222222,
+        "nonColorG": 0.9777777777777777,
+        "nonColorN": 0.7169811320754716
+      }
+    ],
+    "a": {
+      "n": 12,
+      "W": 71,
+      "p": 0.004638671875,
+      "medianG": 0.5104801829268293,
+      "medianN": 0.17601126472094214,
+      "pass": true
+    },
+    "b": {
+      "n": 12,
+      "W": 77,
+      "p": 0.00048828125,
+      "medianG": 0.9727598566308244,
+      "medianN": 0.7389032258064516,
+      "pass": true
+    }
+  },
+  "H2": {
+    "rows": [
+      {
+        "id": "E1-G",
+        "brand": "ember",
+        "painted": "#b91700",
+        "token": "#C23B0B",
+        "support": 28981,
+        "delta": 0.05161721468815538
+      },
+      {
+        "id": "E2-G",
+        "brand": "ember",
+        "painted": "#c43300",
+        "token": "#C23B0B",
+        "support": 26336,
+        "delta": 0.011004340200710198
+      },
+      {
+        "id": "F1-G",
+        "brand": "fjord",
+        "painted": "#006b6a",
+        "token": "#1F6F78",
+        "support": 68840,
+        "delta": 0.028106440250236925
+      },
+      {
+        "id": "F2-G",
+        "brand": "fjord",
+        "painted": "#006e6e",
+        "token": "#1F6F78",
+        "support": 45585,
+        "delta": 0.020964565991267732
+      },
+      {
+        "id": "I1-G",
+        "brand": "ink",
+        "painted": "#97181f",
+        "token": "#B4232A",
+        "support": 4444,
+        "delta": 0.06674201811158151
+      },
+      {
+        "id": "I2-G",
+        "brand": "ink",
+        "painted": "#ac2828",
+        "token": "#B4232A",
+        "support": 123720,
+        "delta": 0.01632974287528464
+      },
+      {
+        "id": "M1-G",
+        "brand": "moss",
+        "painted": "#1f5a24",
+        "token": "#2F6B3A",
+        "support": 39480,
+        "delta": 0.0596119362812351
+      },
+      {
+        "id": "M2-G",
+        "brand": "moss",
+        "painted": "#235e28",
+        "token": "#2F6B3A",
+        "support": 50979,
+        "delta": 0.0458252761204042
+      }
+    ],
+    "eligible": 8,
+    "shifted": 6,
+    "share": 0.75,
+    "pass": true
+  },
+  "H3": {
+    "screens": 24,
+    "withOffToken": 24,
+    "share": 1,
+    "pass": true
+  },
+  "H4": {
+    "screens": 36,
+    "a": {
+      "full": 33,
+      "share": 0.9166666666666666,
+      "pass": true
+    },
+    "b": {
+      "failBefore": 8,
+      "failAfter": 2,
+      "reduction": 0.75,
+      "tested": true,
+      "pass": false
+    },
+    "c": {
+      "screensGainingFailure": 0,
+      "pass": true
+    },
+    "d": {
+      "medianChangedG": 0.06013885461745856,
+      "medianVisibleG": 0.000713073208699146,
+      "pass": true
+    },
+    "unrepairable": 0
+  },
+  "H5": {
+    "rows": [
+      {
+        "id": "E1-G",
+        "screen": 1,
+        "before": 0.9997691646753558,
+        "after": 0.9682935241872899
+      },
+      {
+        "id": "E1-G",
+        "screen": 2,
+        "before": 0.9999620748504542,
+        "after": 0.9999623172816372
+      },
+      {
+        "id": "E1-G",
+        "screen": 3,
+        "before": 1,
+        "after": 0.8929558924126672
+      },
+      {
+        "id": "E2-G",
+        "screen": 1,
+        "before": 1,
+        "after": 0.9650919647251717
+      },
+      {
+        "id": "E2-G",
+        "screen": 2,
+        "before": 0.946328052595896,
+        "after": 0.7760348841184643
+      },
+      {
+        "id": "E2-G",
+        "screen": 3,
+        "before": 0.9994983697015299,
+        "after": 0.9670297517769968
+      },
+      {
+        "id": "F1-G",
+        "screen": 1,
+        "before": 0.7953318035370743,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 2,
+        "before": 0.9979940881766743,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 3,
+        "before": 0.9848196808593933,
+        "after": 0.991769908178732
+      },
+      {
+        "id": "F2-G",
+        "screen": 1,
+        "before": 0.9938747399714257,
+        "after": 1
+      },
+      {
+        "id": "F2-G",
+        "screen": 2,
+        "before": 0.9943241637033786,
+        "after": 0.9999631412751275
+      },
+      {
+        "id": "F2-G",
+        "screen": 3,
+        "before": 0.9930206653891488,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 1,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 2,
+        "before": 0.9920011923688394,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 3,
+        "before": 0.9991756805661667,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 1,
+        "before": 0.9194101958913097,
+        "after": 0.9196768250237616
+      },
+      {
+        "id": "I2-G",
+        "screen": 2,
+        "before": 0.9266090944663348,
+        "after": 0.9965097481004099
+      },
+      {
+        "id": "I2-G",
+        "screen": 3,
+        "before": 0.9896925833831108,
+        "after": 0.985179725386227
+      },
+      {
+        "id": "M1-G",
+        "screen": 1,
+        "before": 0.9991675915649278,
+        "after": 0.9991788074351741
+      },
+      {
+        "id": "M1-G",
+        "screen": 2,
+        "before": 0.9559795775476947,
+        "after": 1
+      },
+      {
+        "id": "M1-G",
+        "screen": 3,
+        "before": 0.9296120786670641,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 1,
+        "before": 0.8205126529972266,
+        "after": 0.9998518351505
+      },
+      {
+        "id": "M2-G",
+        "screen": 2,
+        "before": 0.9446486507058066,
+        "after": 0.9997732179748055
+      },
+      {
+        "id": "M2-G",
+        "screen": 3,
+        "before": 0.9604069555603021,
+        "after": 0.9998329125204218
+      }
+    ],
+    "n": 24,
+    "notWorse": 18,
+    "share": 0.75,
+    "medianBefore": 0.9925109288789942,
+    "medianAfter": 0.9998423738354609,
+    "pass": false
+  },
+  "X1_replaceInPlace": {
+    "exploratory": true,
+    "rows": [
+      {
+        "id": "E1-G",
+        "screen": 1,
+        "before": 0.9997691646753558,
+        "after": 0.9997678008591369
+      },
+      {
+        "id": "E1-G",
+        "screen": 2,
+        "before": 0.9999620748504542,
+        "after": 0.9999622999756663
+      },
+      {
+        "id": "E1-G",
+        "screen": 3,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "E2-G",
+        "screen": 1,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "E2-G",
+        "screen": 2,
+        "before": 0.946328052595896,
+        "after": 1
+      },
+      {
+        "id": "E2-G",
+        "screen": 3,
+        "before": 0.9994983697015299,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 1,
+        "before": 0.7953318035370743,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 2,
+        "before": 0.9979940881766743,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 3,
+        "before": 0.9848196808593933,
+        "after": 0.9917693668864217
+      },
+      {
+        "id": "F2-G",
+        "screen": 1,
+        "before": 0.9938747399714257,
+        "after": 1
+      },
+      {
+        "id": "F2-G",
+        "screen": 2,
+        "before": 0.9943241637033786,
+        "after": 0.9999631403813127
+      },
+      {
+        "id": "F2-G",
+        "screen": 3,
+        "before": 0.9930206653891488,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 1,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 2,
+        "before": 0.9920011923688394,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 3,
+        "before": 0.9991756805661667,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 1,
+        "before": 0.9194101958913097,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 2,
+        "before": 0.9266090944663348,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 3,
+        "before": 0.9896925833831108,
+        "after": 1
+      },
+      {
+        "id": "M1-G",
+        "screen": 1,
+        "before": 0.9991675915649278,
+        "after": 0.9991675915649278
+      },
+      {
+        "id": "M1-G",
+        "screen": 2,
+        "before": 0.9559795775476947,
+        "after": 1
+      },
+      {
+        "id": "M1-G",
+        "screen": 3,
+        "before": 0.9296120786670641,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 1,
+        "before": 0.8205126529972266,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 2,
+        "before": 0.9446486507058066,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 3,
+        "before": 0.9604069555603021,
+        "after": 0.9998680763649385
+      }
+    ],
+    "n": 24,
+    "notWorse": 23,
+    "share": 0.9583333333333334,
+    "medianBefore": 0.9925109288789942,
+    "medianAfter": 1,
+    "worse": [
+      {
+        "id": "E1-G",
+        "screen": 1,
+        "before": 0.9997691646753558,
+        "after": 0.9997678008591369
+      }
+    ]
+  },
+  "H6": {
+    "screens": 42,
+    "median": 0.022256099384116185,
+    "max": 0.20340432668120073,
+    "pass": true
+  },
+  "drift": [
+    {
+      "step": 0,
+      "id": "F1-G",
+      "color": 0.5365853658536586,
+      "type": 1,
+      "spacing": 1,
+      "radius": 0.6666666666666666,
+      "overall": 0.8571428571428571,
+      "contrastFail": 0,
+      "primary": "#006b6a",
+      "foreground": "#001b1b"
+    },
+    {
+      "step": 1,
+      "id": "F1-G-e1",
+      "color": 0.5434782608695652,
+      "type": 1,
+      "spacing": 1,
+      "radius": 0.4,
+      "overall": 0.8557213930348259,
+      "contrastFail": 0,
+      "primary": "#006b6a",
+      "foreground": "#001b1b"
+    },
+    {
+      "step": 2,
+      "id": "F1-G-e2",
+      "color": 0.5319148936170213,
+      "type": 1,
+      "spacing": 1,
+      "radius": 0.4,
+      "overall": 0.8529411764705882,
+      "contrastFail": 0,
+      "primary": "#006b6a",
+      "foreground": "#001b1b"
+    }
+  ],
+  "perFile": [
+    {
+      "id": "E1-G",
+      "brand": "ember",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.20340432668120073,
+        0.11476635808300271,
+        0.020207632900530337
+      ],
+      "radii": {
+        "--radius-lg": "16px",
+        "--radius-2xl": "24px"
+      },
+      "theme": {
+        "--muted-foreground": "#634938",
+        "--primary": "#b91700",
+        "--primary-foreground": "#ffffff",
+        "--card-foreground": "#1a0f07",
+        "--border": "#e9d8c2",
+        "--card": "#ffffff",
+        "--background": "#fefaf1",
+        "--foreground": "#1a0f07",
+        "--muted": "#fdecd5"
+      },
+      "rates": [
+        [
+          "color",
+          0.8301886792452831
+        ],
+        [
+          "colorLenient",
+          0.8301886792452831
+        ],
+        [
+          "type",
+          0.4230769230769231
+        ],
+        [
+          "spacing",
+          0.9850746268656716
+        ],
+        [
+          "radius",
+          1
+        ],
+        [
+          "overall",
+          0.7428571428571429
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "E1-N",
+      "brand": "ember",
+      "arm": "N",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.06389676332297324,
+        0.024938094913560055,
+        0.015141796259791191
+      ],
+      "radii": {
+        "--radius-md": "3px",
+        "--radius-lg": "16px",
+        "--radius-xl": "24px",
+        "--radius-2xl": "24px"
+      },
+      "theme": {
+        "--background": "#fffaef",
+        "--secondary": "#f8e9d2",
+        "--primary": "#d03830",
+        "--foreground": "#2b1c18",
+        "--muted-foreground": "#6f574e",
+        "--border": "#e3d5c6",
+        "--card": "#fffff8",
+        "--primary-foreground": "#fffbf4",
+        "--accent": "#ffdb9d",
+        "--card-foreground": "#2b1c18",
+        "--accent-foreground": "#4c240c",
+        "--secondary-foreground": "#3e2319"
+      },
+      "rates": [
+        [
+          "color",
+          0.71875
+        ],
+        [
+          "colorLenient",
+          0.71875
+        ],
+        [
+          "type",
+          0
+        ],
+        [
+          "spacing",
+          0.9833333333333333
+        ],
+        [
+          "radius",
+          1
+        ],
+        [
+          "overall",
+          0.5803108808290155
+        ]
+      ],
+      "contrastFail": 1
+    },
+    {
+      "id": "E2-G",
+      "brand": "ember",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.013394127759372473,
+        0.012235120692832136,
+        0.01711977868096588
+      ],
+      "radii": {
+        "--radius-sm": "8px",
+        "--radius-lg": "16px"
+      },
+      "theme": {
+        "--background": "#fffaf0",
+        "--primary": "#c43300",
+        "--foreground": "#1a0f05",
+        "--border": "#e9d8be",
+        "--card": "#ffffff",
+        "--primary-foreground": "#ffffff",
+        "--muted-foreground": "#60472f",
+        "--muted": "#fcebd5",
+        "--secondary": "#191928",
+        "--secondary-foreground": "#ffffff",
+        "--card-foreground": "#1a0f05",
+        "--input": "#e9d8be"
+      },
+      "rates": [
+        [
+          "color",
+          0.7358490566037735
+        ],
+        [
+          "colorLenient",
+          0.7358490566037735
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0.8
+        ],
+        [
+          "overall",
+          0.8809523809523809
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "F1-G-e1",
+      "brand": "fjord",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.028228423101881894,
+        0.022684716461456395,
+        0.019461384832111843
+      ],
+      "radii": {},
+      "theme": {
+        "--background": "#ffffff",
+        "--primary": "#006b6a",
+        "--foreground": "#001b1b",
+        "--primary-foreground": "#ffffff",
+        "--border": "#cedfde",
+        "--muted-foreground": "#466464",
+        "--muted": "#eef6f6",
+        "--secondary": "#dff1f0",
+        "--secondary-foreground": "#003d3c",
+        "--accent": "#e79c27",
+        "--destructive": "#901211"
+      },
+      "rates": [
+        [
+          "color",
+          0.5434782608695652
+        ],
+        [
+          "colorLenient",
+          0.5434782608695652
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0.4
+        ],
+        [
+          "overall",
+          0.8557213930348259
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "F1-G-e2",
+      "brand": "fjord",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.028342270341655568,
+        0.02291605430179518,
+        0.01925896831631317
+      ],
+      "radii": {},
+      "theme": {
+        "--background": "#ffffff",
+        "--primary": "#006b6a",
+        "--foreground": "#001b1b",
+        "--primary-foreground": "#ffffff",
+        "--border": "#cedfde",
+        "--muted-foreground": "#466464",
+        "--muted": "#eef6f6",
+        "--secondary": "#dff1f0",
+        "--secondary-foreground": "#003d3c",
+        "--accent": "#e79c27",
+        "--destructive": "#901211"
+      },
+      "rates": [
+        [
+          "color",
+          0.5319148936170213
+        ],
+        [
+          "colorLenient",
+          0.5319148936170213
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0.4
+        ],
+        [
+          "overall",
+          0.8529411764705882
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "F1-G",
+      "brand": "fjord",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.02482154445165477,
+        0.01867663968487084,
+        0.01756022518984027
+      ],
+      "radii": {},
+      "theme": {
+        "--background": "#ffffff",
+        "--primary": "#006b6a",
+        "--foreground": "#001b1b",
+        "--primary-foreground": "#ffffff",
+        "--border": "#cedfde",
+        "--muted-foreground": "#466464",
+        "--muted": "#eef6f6",
+        "--secondary": "#dff1f0",
+        "--secondary-foreground": "#003d3c",
+        "--destructive": "#901211",
+        "--accent": "#e79c27"
+      },
+      "rates": [
+        [
+          "color",
+          0.5365853658536586
+        ],
+        [
+          "colorLenient",
+          0.5365853658536586
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0.6666666666666666
+        ],
+        [
+          "overall",
+          0.8571428571428571
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "F1-N",
+      "brand": "fjord",
+      "arm": "N",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.022906064642462743,
+        0.03609197938501789,
+        0.021625283195008938
+      ],
+      "radii": {},
+      "theme": {
+        "--background": "#fdfaf1",
+        "--card": "#fffef9",
+        "--foreground": "#0f1b2b",
+        "--primary": "#006f5a",
+        "--primary-foreground": "#fefcf4",
+        "--secondary": "#f2ebd9",
+        "--destructive": "#cb4644",
+        "--secondary-foreground": "#162232",
+        "--muted-foreground": "#435163",
+        "--muted": "#f0ebde",
+        "--border": "#dfdace",
+        "--accent": "#ece2ff",
+        "--accent-foreground": "#201f34",
+        "--card-foreground": "#0f1b2b"
+      },
+      "rates": [
+        [
+          "color",
+          0.10810810810810811
+        ],
+        [
+          "colorLenient",
+          0.10810810810810811
+        ],
+        [
+          "type",
+          0.9761904761904762
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0.8333333333333334
+        ],
+        [
+          "overall",
+          0.6871508379888268
+        ]
+      ],
+      "contrastFail": 4
+    },
+    {
+      "id": "F2-G",
+      "brand": "fjord",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.009223572530864197,
+        0.020950520833333333,
+        0.0038975694444444444
+      ],
+      "radii": {},
+      "theme": {
+        "--muted": "#ecf8f8",
+        "--border": "#c8dcdc",
+        "--background": "#ffffff",
+        "--primary": "#006e6e",
+        "--muted-foreground": "#466464",
+        "--primary-foreground": "#ffffff",
+        "--foreground": "#001b1b",
+        "--input": "#ffffff",
+        "--destructive": "#ffffff",
+        "--secondary": "#d9f1f0",
+        "--secondary-foreground": "#00393a",
+        "--card": "#ffffff",
+        "--card-foreground": "#001b1b"
+      },
+      "rates": [
+        [
+          "color",
+          0.6442307692307693
+        ],
+        [
+          "colorLenient",
+          0.6442307692307693
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          0.9878048780487805
+        ],
+        [
+          "radius",
+          0.9230769230769231
+        ],
+        [
+          "overall",
+          0.902676399026764
+        ]
+      ],
+      "contrastFail": 1
+    },
+    {
+      "id": "I1-G",
+      "brand": "ink",
+      "arm": "G",
+      "font": "Inter",
+      "serif": "Source Serif 4",
+      "diff": [
+        0.07822562315326918,
+        0.1288037723031429,
+        0.05408066052715148
+      ],
+      "radii": {
+        "--radius-sm": "0px"
+      },
+      "theme": {
+        "--background": "#faf9f2",
+        "--foreground": "#111111",
+        "--primary": "#97181f",
+        "--border": "#d9d8ce",
+        "--muted-foreground": "#49483d",
+        "--primary-foreground": "#ffffff",
+        "--accent": "#fff0b5",
+        "--card": "#ffffff"
+      },
+      "rates": [
+        [
+          "color",
+          0.4782608695652174
+        ],
+        [
+          "colorLenient",
+          0.4782608695652174
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          1
+        ],
+        [
+          "overall",
+          0.8260869565217391
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "I1-N",
+      "brand": "ink",
+      "arm": "N",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.028671179448270957,
+        0.050787728026533994,
+        0.02182748230677598
+      ],
+      "radii": {
+        "--radius-lg": "4px",
+        "--radius-xl": "6px",
+        "--radius-2xl": "8px"
+      },
+      "theme": {
+        "--background": "#faf6ee",
+        "--secondary": "#e2ecf7",
+        "--foreground": "#161b23",
+        "--secondary-foreground": "#232933",
+        "--muted-foreground": "#454e5b",
+        "--primary": "#02629c",
+        "--muted": "#ede7db",
+        "--primary-foreground": "#fefbf6",
+        "--border": "#ddd7ca",
+        "--card": "#fefbf6",
+        "--accent": "#d1e5ef",
+        "--accent-foreground": "#1b222e"
+      },
+      "rates": [
+        [
+          "color",
+          0.17857142857142858
+        ],
+        [
+          "colorLenient",
+          0.17857142857142858
+        ],
+        [
+          "type",
+          0.53125
+        ],
+        [
+          "spacing",
+          0.9642857142857143
+        ],
+        [
+          "radius",
+          0.5
+        ],
+        [
+          "overall",
+          0.5614973262032086
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "I2-G",
+      "brand": "ink",
+      "arm": "G",
+      "font": "Inter",
+      "serif": "Source Serif 4",
+      "diff": [
+        0.019310970081595647,
+        0.029351971611448282,
+        0.014317947711777112
+      ],
+      "radii": {
+        "--radius-sm": "0px",
+        "--radius-md": "0px"
+      },
+      "theme": {
+        "--background": "#f9f9f4",
+        "--foreground": "#0a0a0a",
+        "--primary": "#ac2828",
+        "--primary-foreground": "#ffffff",
+        "--muted-foreground": "#4a4a43",
+        "--accent": "#fff0a6",
+        "--muted": "#d9d9ce",
+        "--card": "#ffffff",
+        "--border": "#d9d9ce",
+        "--accent-foreground": "#0a0a0a",
+        "--input": "#d9d9ce"
+      },
+      "rates": [
+        [
+          "color",
+          0.3958333333333333
+        ],
+        [
+          "colorLenient",
+          0.3958333333333333
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          1
+        ],
+        [
+          "overall",
+          0.8164556962025317
+        ]
+      ],
+      "contrastFail": 1
+    },
+    {
+      "id": "M1-G",
+      "brand": "moss",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.017156779033892323,
+        0.015713765269761034,
+        0.04312650054899736
+      ],
+      "radii": {
+        "--radius-lg": "7px"
+      },
+      "theme": {
+        "--primary": "#1f5a24",
+        "--primary-foreground": "#ffffff",
+        "--border": "#d2e0ca",
+        "--card": "#ffffff",
+        "--muted-foreground": "#4e5d4b",
+        "--background": "#f6fbf2",
+        "--foreground": "#121e11",
+        "--accent": "#6a43c4",
+        "--accent-foreground": "#ffffff",
+        "--card-foreground": "#121e11",
+        "--secondary": "#e4f2db"
+      },
+      "rates": [
+        [
+          "color",
+          0.2835820895522388
+        ],
+        [
+          "colorLenient",
+          0.2835820895522388
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0
+        ],
+        [
+          "overall",
+          0.6872037914691943
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "M1-N",
+      "brand": "moss",
+      "arm": "N",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.06107110877984942,
+        0.013291665243576169,
+        0.02446612726339918
+      ],
+      "radii": {
+        "--radius-lg": "10px",
+        "--radius-xl": "18px",
+        "--radius-2xl": "24px"
+      },
+      "theme": {
+        "--background": "#faf7ee",
+        "--muted-foreground": "#485669",
+        "--card": "#fffdf8",
+        "--primary": "#287c42",
+        "--foreground": "#0f1b2b",
+        "--border": "#ded7c5",
+        "--card-foreground": "#0f1b2b",
+        "--secondary": "#ece8db",
+        "--input": "#d8d1bb",
+        "--muted": "#f0ebde",
+        "--primary-foreground": "#effdf1"
+      },
+      "rates": [
+        [
+          "color",
+          0.14
+        ],
+        [
+          "colorLenient",
+          0.14
+        ],
+        [
+          "type",
+          0.9848484848484849
+        ],
+        [
+          "spacing",
+          0.6964285714285714
+        ],
+        [
+          "radius",
+          0
+        ],
+        [
+          "overall",
+          0.5806451612903226
+        ]
+      ],
+      "contrastFail": 0
+    },
+    {
+      "id": "M2-G",
+      "brand": "moss",
+      "arm": "G",
+      "font": "Inter",
+      "serif": null,
+      "diff": [
+        0.0417677060919658,
+        0.015283991939615424,
+        0.017515727149377082
+      ],
+      "radii": {},
+      "theme": {
+        "--background": "#f6faf1",
+        "--secondary": "#e7f1d8",
+        "--primary": "#235e28",
+        "--border": "#d5dfc6",
+        "--muted-foreground": "#485c44",
+        "--foreground": "#1a2517",
+        "--card": "#ffffff",
+        "--card-foreground": "#1a2517",
+        "--primary-foreground": "#ffffff",
+        "--secondary-foreground": "#103a14",
+        "--input": "#d5dfc6",
+        "--accent": "#6f48c1"
+      },
+      "rates": [
+        [
+          "color",
+          0.5135135135135135
+        ],
+        [
+          "colorLenient",
+          0.5135135135135135
+        ],
+        [
+          "type",
+          1
+        ],
+        [
+          "spacing",
+          1
+        ],
+        [
+          "radius",
+          0.5
+        ],
+        [
+          "overall",
+          0.7829457364341085
+        ]
+      ],
+      "contrastFail": 1
+    }
+  ],
+  "X1_frozenRepair": {
+    "exploratory": true,
+    "rows": [
+      {
+        "id": "E1-G",
+        "screen": 1,
+        "before": 0.9997691646753558,
+        "after": 0.9997677659080353
+      },
+      {
+        "id": "E1-G",
+        "screen": 2,
+        "before": 0.9999620748504542,
+        "after": 0.9999622999756663
+      },
+      {
+        "id": "E1-G",
+        "screen": 3,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "E2-G",
+        "screen": 1,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "E2-G",
+        "screen": 2,
+        "before": 0.946328052595896,
+        "after": 1
+      },
+      {
+        "id": "E2-G",
+        "screen": 3,
+        "before": 0.9994983697015299,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 1,
+        "before": 0.7953318035370743,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 2,
+        "before": 0.9979940881766743,
+        "after": 1
+      },
+      {
+        "id": "F1-G",
+        "screen": 3,
+        "before": 0.9848196808593933,
+        "after": 0.9917693668864217
+      },
+      {
+        "id": "F2-G",
+        "screen": 1,
+        "before": 0.9938747399714257,
+        "after": 1
+      },
+      {
+        "id": "F2-G",
+        "screen": 2,
+        "before": 0.9943241637033786,
+        "after": 0.9999631403813127
+      },
+      {
+        "id": "F2-G",
+        "screen": 3,
+        "before": 0.9930206653891488,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 1,
+        "before": 1,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 2,
+        "before": 0.9920011923688394,
+        "after": 1
+      },
+      {
+        "id": "I1-G",
+        "screen": 3,
+        "before": 0.9991756805661667,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 1,
+        "before": 0.9194101958913097,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 2,
+        "before": 0.9266090944663348,
+        "after": 1
+      },
+      {
+        "id": "I2-G",
+        "screen": 3,
+        "before": 0.9896925833831108,
+        "after": 1
+      },
+      {
+        "id": "M1-G",
+        "screen": 1,
+        "before": 0.9991675915649278,
+        "after": 0.9991788074351741
+      },
+      {
+        "id": "M1-G",
+        "screen": 2,
+        "before": 0.9559795775476947,
+        "after": 1
+      },
+      {
+        "id": "M1-G",
+        "screen": 3,
+        "before": 0.9296120786670641,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 1,
+        "before": 0.8205126529972266,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 2,
+        "before": 0.9446486507058066,
+        "after": 1
+      },
+      {
+        "id": "M2-G",
+        "screen": 3,
+        "before": 0.9604069555603021,
+        "after": 0.9998699485058012
+      }
+    ],
+    "n": 24,
+    "notWorse": 23,
+    "share": 0.9583333333333334,
+    "medianBefore": 0.9925109288789942,
+    "medianAfter": 1,
+    "worse": [
+      {
+        "id": "E1-G",
+        "screen": 1,
+        "before": 0.9997691646753558,
+        "after": 0.9997677659080353
+      }
+    ]
+  }
+}
