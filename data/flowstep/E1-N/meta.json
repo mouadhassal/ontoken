@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "E1-N",
+    "brief": {
+      "id": "E1",
+      "brand": "ember",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a food delivery app: a restaurant list with search and categories, a restaurant menu, and a cart with checkout summary. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "N",
+    "phase": "test"
+  },
+  "fileId": "36ad423d-d51b-42a5-aef9-ecf86fc50696",
+  "screenIds": [
+    "fda5c847-982a-4432-a28c-ce8b22236d8e",
+    "4076aa41-bf31-4d09-b6f3-949921dda0a3",
+    "1c0c73e8-d910-4bd5-8309-494f878d1b76"
+  ],
+  "screens": [
+    {
+      "screenId": "fda5c847-982a-4432-a28c-ce8b22236d8e",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "4076aa41-bf31-4d09-b6f3-949921dda0a3",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "1c0c73e8-d910-4bd5-8309-494f878d1b76",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": null,
+  "guidelinesAfterSha": null,
+  "seconds": 69,
+  "finishedAt": "2026-10-09T20:28:33.185Z"
+}

@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "I1-N",
+    "brief": {
+      "id": "I1",
+      "brand": "ink",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a news reader: a front page with top stories, an article page, and saved articles. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "N",
+    "phase": "test"
+  },
+  "fileId": "c9004014-c404-4f63-8b11-1552758a447d",
+  "screenIds": [
+    "f717c560-b17f-488e-9c63-1267253c7274",
+    "36de11c3-aad3-4251-bf68-57dbd86a8fe7",
+    "8367535d-cbee-44a1-a8f9-40ba919c8f67"
+  ],
+  "screens": [
+    {
+      "screenId": "f717c560-b17f-488e-9c63-1267253c7274",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "36de11c3-aad3-4251-bf68-57dbd86a8fe7",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "8367535d-cbee-44a1-a8f9-40ba919c8f67",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": null,
+  "guidelinesAfterSha": null,
+  "seconds": 59,
+  "finishedAt": "2026-10-09T20:24:26.900Z"
+}

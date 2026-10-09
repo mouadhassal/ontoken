@@ -1,0 +1,491 @@
+{
+  "id": "E2-G",
+  "job": {
+    "kind": "generate",
+    "id": "E2-G",
+    "brief": {
+      "id": "E2",
+      "brand": "ember",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for food order tracking: order confirmed, courier on the way with an ETA, and rate your order. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "brand": "ember",
+  "arm": "G",
+  "calibration": {
+    "vars": {
+      "--font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+      "--background": "#fffaf0",
+      "--primary": "#c43300",
+      "--foreground": "#1a0f05",
+      "--border": "#e9d8be",
+      "--card": "#ffffff",
+      "--primary-foreground": "#ffffff",
+      "--muted-foreground": "#60472f",
+      "--muted": "#fcebd5",
+      "--secondary": "#191928",
+      "--secondary-foreground": "#ffffff",
+      "--card-foreground": "#1a0f05",
+      "--input": "#e9d8be",
+      "--radius-sm": "8px",
+      "--radius-lg": "16px"
+    },
+    "font": "Inter",
+    "serif": null,
+    "agreement": {
+      "--background": 0.9875442200303223,
+      "--primary": 0.976875759416768,
+      "--foreground": 0.48417068134893326,
+      "--border": 0.9592875318066157,
+      "--card": 0.9880115523377625,
+      "--primary-foreground": 0.7375,
+      "--muted-foreground": 0.35629453681710216,
+      "--muted": 0.9597423311366362,
+      "--secondary": 0.9746182310939698,
+      "--secondary-foreground": 0.25,
+      "--card-foreground": 0.7234972677595628,
+      "--input": 0.9585492227979274
+    },
+    "support": {
+      "--background": 397727,
+      "--primary": 26336,
+      "--foreground": 2906,
+      "--border": 3144,
+      "--card": 327899,
+      "--primary-foreground": 160,
+      "--muted-foreground": 421,
+      "--muted": 80879,
+      "--secondary": 19187,
+      "--secondary-foreground": 68,
+      "--card-foreground": 915,
+      "--input": 772
+    },
+    "diff": [
+      0.013394127759372473,
+      0.012235120692832136,
+      0.01711977868096588
+    ],
+    "l1": [
+      4.1178394829817355,
+      3.189798801407425,
+      4.62327948358892
+    ]
+  },
+  "screens": [
+    {
+      "screen": 1,
+      "screenId": "8245668c-3e52-44d5-a45c-220437e945d5",
+      "before": {
+        "color": {
+          "n": 32,
+          "on": 30,
+          "rate": 0.9375
+        },
+        "colorLenient": {
+          "n": 32,
+          "on": 30,
+          "rate": 0.9375
+        },
+        "type": {
+          "n": 26,
+          "on": 26,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 33,
+          "on": 33,
+          "rate": 1
+        },
+        "radius": {
+          "n": 2,
+          "on": 2,
+          "rate": 1
+        },
+        "overall": {
+          "n": 93,
+          "on": 91,
+          "rate": 0.978494623655914
+        },
+        "contrastN": 13,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 32,
+          "on": 32,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 32,
+          "on": 32,
+          "rate": 1
+        },
+        "type": {
+          "n": 26,
+          "on": 26,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 33,
+          "on": 33,
+          "rate": 1
+        },
+        "radius": {
+          "n": 2,
+          "on": 2,
+          "rate": 1
+        },
+        "overall": {
+          "n": 93,
+          "on": 93,
+          "rate": 1
+        },
+        "contrastN": 13,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 1,
+      "pixelOursBefore": 1,
+      "pixelOursAfter": 1,
+      "changed": 0.002109020116807268,
+      "changedVisible": 0.000019923266960392545,
+      "passes": 1,
+      "editedNodes": 2,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        }
+      ]
+    },
+    {
+      "screen": 2,
+      "screenId": "5dde9876-7ef6-4e39-8d65-ba7be99d432d",
+      "before": {
+        "color": {
+          "n": 53,
+          "on": 39,
+          "rate": 0.7358490566037735
+        },
+        "colorLenient": {
+          "n": 53,
+          "on": 39,
+          "rate": 0.7358490566037735
+        },
+        "type": {
+          "n": 30,
+          "on": 30,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 38,
+          "on": 38,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 4,
+          "rate": 0.8
+        },
+        "overall": {
+          "n": 126,
+          "on": 111,
+          "rate": 0.8809523809523809
+        },
+        "contrastN": 15,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 53,
+          "on": 53,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 53,
+          "on": 53,
+          "rate": 1
+        },
+        "type": {
+          "n": 30,
+          "on": 30,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 38,
+          "on": 38,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 126,
+          "on": 126,
+          "rate": 1
+        },
+        "contrastN": 15,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.946328052595896,
+      "pixelOursBefore": 0.94612744273549,
+      "pixelOursAfter": 1,
+      "changed": 0.07414514727947563,
+      "changedVisible": 0.00009476427386875148,
+      "passes": 1,
+      "editedNodes": 14,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#191928"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#191928"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#191928"
+        }
+      ]
+    },
+    {
+      "screen": 3,
+      "screenId": "0c81b5af-ca61-4269-b491-7d7646fe53ae",
+      "before": {
+        "color": {
+          "n": 30,
+          "on": 11,
+          "rate": 0.36666666666666664
+        },
+        "colorLenient": {
+          "n": 30,
+          "on": 11,
+          "rate": 0.36666666666666664
+        },
+        "type": {
+          "n": 30,
+          "on": 27,
+          "rate": 0.9
+        },
+        "spacing": {
+          "n": 36,
+          "on": 36,
+          "rate": 1
+        },
+        "radius": {
+          "n": 3,
+          "on": 2,
+          "rate": 0.6666666666666666
+        },
+        "overall": {
+          "n": 99,
+          "on": 76,
+          "rate": 0.7676767676767676
+        },
+        "contrastN": 15,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 30,
+          "on": 30,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 30,
+          "on": 30,
+          "rate": 1
+        },
+        "type": {
+          "n": 30,
+          "on": 30,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 36,
+          "on": 36,
+          "rate": 1
+        },
+        "radius": {
+          "n": 3,
+          "on": 3,
+          "rate": 1
+        },
+        "overall": {
+          "n": 99,
+          "on": 99,
+          "rate": 1
+        },
+        "contrastN": 15,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9994983697015299,
+      "pixelOursBefore": 0.9997610922603578,
+      "pixelOursAfter": 1,
+      "changed": 0.060006033903708005,
+      "changedVisible": 0.015386454455411728,
+      "passes": 1,
+      "editedNodes": 12,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "type/size",
+          "value": "16px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#1a0f05"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#60472f"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#60472f"
+        }
+      ]
+    }
+  ],
+  "seconds": 63
+}

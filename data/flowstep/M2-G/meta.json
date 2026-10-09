@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "M2-G",
+    "brief": {
+      "id": "M2",
+      "brand": "moss",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a sleep and mood journal: log last night's sleep, a mood check-in, and 30-day trends. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "fileId": "996d2238-d116-43bf-9359-152e610369f6",
+  "screenIds": [
+    "888a9934-cf52-4a2d-96f2-b2b85940deeb",
+    "acd64562-da87-4b1b-ab9a-abcfdcbd160b",
+    "7a15173a-08b1-40e2-9a11-1630696f5666"
+  ],
+  "screens": [
+    {
+      "screenId": "888a9934-cf52-4a2d-96f2-b2b85940deeb",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "acd64562-da87-4b1b-ab9a-abcfdcbd160b",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "7a15173a-08b1-40e2-9a11-1630696f5666",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "0b0cbbd9c6516cb2",
+  "guidelinesAfterSha": "c44bac8bd24a8edd",
+  "seconds": 62,
+  "finishedAt": "2026-10-09T20:36:11.357Z"
+}

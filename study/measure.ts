@@ -3,11 +3,15 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { calibrate, FONT_CANDIDATES, processScreen } from "../src/pipeline.ts";
+import { calibrateV2, FLOWSTEP_FONTS, toFlowstepDialect } from "../src/calibrate_v2.ts";
 import { Renderer } from "../src/render.ts";
 import { parseDesignMd } from "../src/tokens.ts";
 
+// --v2: amendment 2 (text-colour recovery fix); writes to separate folders
+const V2 = process.argv.includes("--v2");
 const DATA = "data/flowstep";
-const OUT = "results/files";
+const OUT = V2 ? "results/files_v2" : "results/files";
+const FIXED = V2 ? "data/fixed_v2" : "data/fixed";
 const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1] : null;
 const force = process.argv.includes("--force");
 
@@ -28,18 +32,31 @@ try {
     const meta = JSON.parse(readFileSync(join(dir, "meta.json"), "utf8"));
     const brand = brandOf(meta);
     const tokens = parseDesignMd(readFileSync(`study/brands/${brand}.md`, "utf8"));
+    if (V2) {
+      // amendment 2: do not check or insert brand fonts Flowstep's renderer cannot paint
+      const ok = FLOWSTEP_FONTS.map((f) => f.toLowerCase());
+      tokens.fontFamilies = tokens.fontFamilies.filter((f) => ok.includes(f));
+      tokens.typeScale = tokens.typeScale.filter((t) => ok.includes(t.family.toLowerCase()));
+    }
     const shots = meta.screens.map((s: any, k: number) => ({
       jsx: readFileSync(join(dir, `s${k + 1}.jsx`), "utf8"),
       png: readFileSync(join(dir, `s${k + 1}.png`)),
     }));
     const t0 = Date.now();
-    const cal = await calibrate(r, shots);
+    const cal = V2
+      ? await calibrateV2(
+          r,
+          shots,
+          JSON.parse(readFileSync(join("results/files", `${id}.json`), "utf8")).calibration,
+          brand === "ink" ? "Source Serif 4" : null, // the only brand with a serif heading face
+        )
+      : await calibrate(r, shots);
     const screens = [];
-    const fixedDir = join("data/fixed", id);
+    const fixedDir = join(FIXED, id);
     mkdirSync(fixedDir, { recursive: true });
     for (const [k, shot] of shots.entries()) {
       const s = await processScreen(r, shot, cal, tokens);
-      writeFileSync(join(fixedDir, `s${k + 1}.jsx`), s.repairedJsx);
+      writeFileSync(join(fixedDir, `s${k + 1}.jsx`), V2 ? toFlowstepDialect(s.repairedJsx) : s.repairedJsx);
       writeFileSync(join(fixedDir, `s${k + 1}.ours_before.png`), s.beforePng);
       writeFileSync(join(fixedDir, `s${k + 1}.ours_after.png`), s.afterPng);
       const { repairedJsx, afterPng, beforePng, ...rest } = s;

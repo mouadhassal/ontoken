@@ -1,0 +1,785 @@
+{
+  "id": "M2-G",
+  "job": {
+    "kind": "generate",
+    "id": "M2-G",
+    "brief": {
+      "id": "M2",
+      "brand": "moss",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a sleep and mood journal: log last night's sleep, a mood check-in, and 30-day trends. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "brand": "moss",
+  "arm": "G",
+  "calibration": {
+    "vars": {
+      "--font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+      "--background": "#f6faf1",
+      "--secondary": "#e7f1d8",
+      "--primary": "#235e28",
+      "--border": "#d5dfc6",
+      "--muted-foreground": "#485c44",
+      "--foreground": "#1a2517",
+      "--card": "#ffffff",
+      "--card-foreground": "#1a2517",
+      "--primary-foreground": "#235e28",
+      "--secondary-foreground": "#103a14",
+      "--input": "#d5dfc6",
+      "--accent": "#6f48c1"
+    },
+    "font": "Inter",
+    "serif": null,
+    "agreement": {
+      "--background": 0.9754613093561387,
+      "--secondary": 0.9429,
+      "--primary": 0.9241256203534789,
+      "--border": 0.8463603818615751,
+      "--muted-foreground": 0.449438202247191,
+      "--foreground": 0.35612216307088823,
+      "--card": 0.9855081982192931,
+      "--card-foreground": 0.6970705725699068,
+      "--primary-foreground": 0.3160919540229885,
+      "--secondary-foreground": 0.4758269720101781,
+      "--input": 1,
+      "--accent": 0.9738430583501007
+    },
+    "support": {
+      "--background": 532506,
+      "--secondary": 40000,
+      "--primary": 50979,
+      "--border": 6704,
+      "--muted-foreground": 1157,
+      "--foreground": 3569,
+      "--card": 350198,
+      "--card-foreground": 1502,
+      "--primary-foreground": 174,
+      "--secondary-foreground": 393,
+      "--input": 868,
+      "--accent": 497
+    },
+    "diff": [
+      0.04091100561266892,
+      0.015326684654530551,
+      0.017515727149377082
+    ],
+    "l1": [
+      8.67070919240563,
+      2.9627966194959603,
+      3.180577827117854
+    ]
+  },
+  "screens": [
+    {
+      "screen": 1,
+      "screenId": "888a9934-cf52-4a2d-96f2-b2b85940deeb",
+      "before": {
+        "color": {
+          "n": 37,
+          "on": 17,
+          "rate": 0.4594594594594595
+        },
+        "colorLenient": {
+          "n": 37,
+          "on": 17,
+          "rate": 0.4594594594594595
+        },
+        "type": {
+          "n": 38,
+          "on": 19,
+          "rate": 0.5
+        },
+        "spacing": {
+          "n": 50,
+          "on": 42,
+          "rate": 0.84
+        },
+        "radius": {
+          "n": 4,
+          "on": 2,
+          "rate": 0.5
+        },
+        "overall": {
+          "n": 129,
+          "on": 80,
+          "rate": 0.6201550387596899
+        },
+        "contrastN": 19,
+        "contrastFail": 1,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 37,
+          "on": 37,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 37,
+          "on": 37,
+          "rate": 1
+        },
+        "type": {
+          "n": 38,
+          "on": 38,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 50,
+          "on": 50,
+          "rate": 1
+        },
+        "radius": {
+          "n": 4,
+          "on": 4,
+          "rate": 1
+        },
+        "overall": {
+          "n": 129,
+          "on": 129,
+          "rate": 1
+        },
+        "contrastN": 19,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.8205126529972266,
+      "pixelOursBefore": 0.8282197960251046,
+      "pixelOursAfter": 1,
+      "changed": 0.2106173935812926,
+      "changedVisible": 0.02409007593610893,
+      "passes": 1,
+      "editedNodes": 24,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "spacing/pt",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pr",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pb",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pl",
+          "value": "12px"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#e9e8ec"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#103a14"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "spacing/pt",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pr",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pb",
+          "value": "12px"
+        },
+        {
+          "kind": "spacing/pl",
+          "value": "12px"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        }
+      ]
+    },
+    {
+      "screen": 2,
+      "screenId": "acd64562-da87-4b1b-ab9a-abcfdcbd160b",
+      "before": {
+        "color": {
+          "n": 40,
+          "on": 24,
+          "rate": 0.6
+        },
+        "colorLenient": {
+          "n": 40,
+          "on": 25,
+          "rate": 0.625
+        },
+        "type": {
+          "n": 36,
+          "on": 18,
+          "rate": 0.5
+        },
+        "spacing": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "radius": {
+          "n": 3,
+          "on": 3,
+          "rate": 1
+        },
+        "overall": {
+          "n": 119,
+          "on": 85,
+          "rate": 0.7142857142857143
+        },
+        "contrastN": 18,
+        "contrastFail": 2,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "type": {
+          "n": 36,
+          "on": 36,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 40,
+          "on": 40,
+          "rate": 1
+        },
+        "radius": {
+          "n": 3,
+          "on": 3,
+          "rate": 1
+        },
+        "overall": {
+          "n": 119,
+          "on": 119,
+          "rate": 1
+        },
+        "contrastN": 18,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9446486507058066,
+      "pixelOursBefore": 0.9409181927173456,
+      "pixelOursAfter": 1,
+      "changed": 0.09964764279290049,
+      "changedVisible": 0.02101335428122545,
+      "passes": 1,
+      "editedNodes": 23,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/placeholder",
+          "value": "#8d928b"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#485c44"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        }
+      ]
+    },
+    {
+      "screen": 3,
+      "screenId": "7a15173a-08b1-40e2-9a11-1630696f5666",
+      "before": {
+        "color": {
+          "n": 75,
+          "on": 20,
+          "rate": 0.26666666666666666
+        },
+        "colorLenient": {
+          "n": 75,
+          "on": 20,
+          "rate": 0.26666666666666666
+        },
+        "type": {
+          "n": 42,
+          "on": 21,
+          "rate": 0.5
+        },
+        "spacing": {
+          "n": 58,
+          "on": 58,
+          "rate": 1
+        },
+        "radius": {
+          "n": 6,
+          "on": 1,
+          "rate": 0.16666666666666666
+        },
+        "overall": {
+          "n": 181,
+          "on": 100,
+          "rate": 0.5524861878453039
+        },
+        "contrastN": 21,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 75,
+          "on": 75,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 75,
+          "on": 75,
+          "rate": 1
+        },
+        "type": {
+          "n": 42,
+          "on": 42,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 58,
+          "on": 58,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 180,
+          "on": 180,
+          "rate": 1
+        },
+        "contrastN": 21,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9604069555603021,
+      "pixelOursBefore": 0.9598345501833109,
+      "pixelOursAfter": 0.9998685594111462,
+      "changed": 0.10506095555281444,
+      "changedVisible": 0.0236523991612187,
+      "passes": 1,
+      "editedNodes": 66,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "12px"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#235e28"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "color/border",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/text",
+          "value": "#485c44"
+        },
+        {
+          "kind": "type/family",
+          "value": "inter"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "4px"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#235e28"
+        }
+      ]
+    }
+  ],
+  "seconds": 92
+}

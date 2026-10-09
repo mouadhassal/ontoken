@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "F2-G",
+    "brief": {
+      "id": "F2",
+      "brand": "fjord",
+      "platform": "web",
+      "prompt": "Generate 3 desktop web screens for a small-business invoicing tool: an invoice list with filters, a create-invoice form, and a payment-received confirmation. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "fileId": "48c73437-dd2a-4775-aea9-b5ca6660bed3",
+  "screenIds": [
+    "771a0b44-f150-4314-86f9-0cd95855f4c9",
+    "1ed8d0fd-3098-4b4d-b9fc-194b73fe99ec",
+    "2acfb8f0-8453-46fb-97c1-255860107cd0"
+  ],
+  "screens": [
+    {
+      "screenId": "771a0b44-f150-4314-86f9-0cd95855f4c9",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "desktop-large",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "1ed8d0fd-3098-4b4d-b9fc-194b73fe99ec",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "desktop-large",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "2acfb8f0-8453-46fb-97c1-255860107cd0",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "desktop-large",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "cf478d219aa512c7",
+  "guidelinesAfterSha": "1e17559f88ee6054",
+  "seconds": 106,
+  "finishedAt": "2026-10-09T20:33:58.785Z"
+}

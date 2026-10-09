@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "I2-G",
+    "brief": {
+      "id": "I2",
+      "brand": "ink",
+      "platform": "web",
+      "prompt": "Generate 3 desktop web screens for a long-read magazine: a homepage with a featured essay, an article reading view, and a newsletter sign-up page. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "fileId": "417b1834-1a0b-4acb-b478-b05e3312fbdf",
+  "screenIds": [
+    "a525f3e9-2755-4d3b-90d3-eefe87a65e18",
+    "5ab6d516-4e92-4fc7-91d1-9eed4f1dab23",
+    "c4769271-d881-4885-abdd-773452ed9eb9"
+  ],
+  "screens": [
+    {
+      "screenId": "a525f3e9-2755-4d3b-90d3-eefe87a65e18",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "desktop",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "5ab6d516-4e92-4fc7-91d1-9eed4f1dab23",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "desktop",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "c4769271-d881-4885-abdd-773452ed9eb9",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "desktop",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "29f2e7276a47379b",
+  "guidelinesAfterSha": "26346e635bc1d5f6",
+  "seconds": 65,
+  "finishedAt": "2026-10-09T20:32:12.243Z"
+}

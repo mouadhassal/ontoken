@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "F1-G",
+    "brief": {
+      "id": "F1",
+      "brand": "fjord",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a personal budgeting app: a home dashboard with balance and recent transactions, a transaction detail screen, and a monthly spending breakdown. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "fileId": "83feaea0-6dc4-4cb7-a47b-6e14695e1b02",
+  "screenIds": [
+    "adb4d9a9-b40f-4f30-ba74-76c146ecd19e",
+    "2a640c51-c4b1-407c-81f6-9009e48be054",
+    "8b285dbb-6b3f-42bc-8441-abdac3256fe7"
+  ],
+  "screens": [
+    {
+      "screenId": "adb4d9a9-b40f-4f30-ba74-76c146ecd19e",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "2a640c51-c4b1-407c-81f6-9009e48be054",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "8b285dbb-6b3f-42bc-8441-abdac3256fe7",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "cf478d219aa512c7",
+  "guidelinesAfterSha": "1e17559f88ee6054",
+  "seconds": 89,
+  "finishedAt": "2026-10-09T20:31:06.270Z"
+}

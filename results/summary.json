@@ -1,0 +1,80 @@
+{
+  "N": {
+    "screens": 12,
+    "before": {
+      "color": 0.2011111111111111,
+      "colorLenient": 0.2011111111111111,
+      "type": 0.51,
+      "spacing": 0.9743589743589743,
+      "radius": 0.65,
+      "overall": 0.5723329787599081
+    },
+    "after": {
+      "color": 1,
+      "colorLenient": 1,
+      "type": 1,
+      "spacing": 1,
+      "radius": 1,
+      "overall": 1
+    },
+    "allOnBefore": 0,
+    "allOnAfter": 9,
+    "usages": 2061
+  },
+  "G": {
+    "screens": 24,
+    "before": {
+      "color": 0.7128623188405797,
+      "colorLenient": 0.7128623188405797,
+      "type": 0.9019230769230769,
+      "spacing": 1,
+      "radius": 1,
+      "overall": 0.8371848739495797
+    },
+    "after": {
+      "color": 1,
+      "colorLenient": 1,
+      "type": 1,
+      "spacing": 1,
+      "radius": 1,
+      "overall": 1
+    },
+    "allOnBefore": 0,
+    "allOnAfter": 24,
+    "usages": 4157
+  },
+  "byBrandG": {
+    "fjord": {
+      "color": 0.6200686106346484,
+      "colorLenient": 0.6200686106346484,
+      "type": 1,
+      "spacing": 0.9971098265895953,
+      "radius": 0.7948717948717949,
+      "overall": 0.8579499596448749
+    },
+    "ember": {
+      "color": 0.7830188679245282,
+      "colorLenient": 0.7830188679245282,
+      "type": 0.7,
+      "spacing": 1,
+      "radius": 0.9,
+      "overall": 0.7708246852082468
+    },
+    "moss": {
+      "color": 0.5297297297297298,
+      "colorLenient": 0.5422297297297297,
+      "type": 0.5,
+      "spacing": 1,
+      "radius": 0.3333333333333333,
+      "overall": 0.6830357142857143
+    },
+    "ink": {
+      "color": 0.772875816993464,
+      "colorLenient": 0.772875816993464,
+      "type": 0.9001989389920424,
+      "spacing": 1,
+      "radius": 1,
+      "overall": 0.8938517179023509
+    }
+  }
+}

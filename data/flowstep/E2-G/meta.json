@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "E2-G",
+    "brief": {
+      "id": "E2",
+      "brand": "ember",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for food order tracking: order confirmed, courier on the way with an ETA, and rate your order. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "fileId": "d36ac27a-e559-4209-b0cc-7759e6c221a8",
+  "screenIds": [
+    "8245668c-3e52-44d5-a45c-220437e945d5",
+    "5dde9876-7ef6-4e39-8d65-ba7be99d432d",
+    "0c81b5af-ca61-4269-b491-7d7646fe53ae"
+  ],
+  "screens": [
+    {
+      "screenId": "8245668c-3e52-44d5-a45c-220437e945d5",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "5dde9876-7ef6-4e39-8d65-ba7be99d432d",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "0c81b5af-ca61-4269-b491-7d7646fe53ae",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "be374036626122b1",
+  "guidelinesAfterSha": "ab0c150fc0cfdac4",
+  "seconds": 70,
+  "finishedAt": "2026-10-09T20:35:09.061Z"
+}

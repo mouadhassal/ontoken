@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "M1-G",
+    "brief": {
+      "id": "M1",
+      "brand": "moss",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a habit tracker: today's habits checklist, an add-a-habit form, and weekly streak statistics. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "test"
+  },
+  "fileId": "fe2b33fc-4df8-4bd3-a555-03e9978a27c4",
+  "screenIds": [
+    "269515eb-2fdb-49cf-856d-06eb55b5485a",
+    "c455e144-8d93-49de-90f9-c888b39e99f1",
+    "1d01abc5-e9df-4b79-aed4-8585b0e74ab3"
+  ],
+  "screens": [
+    {
+      "screenId": "269515eb-2fdb-49cf-856d-06eb55b5485a",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "c455e144-8d93-49de-90f9-c888b39e99f1",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "1d01abc5-e9df-4b79-aed4-8585b0e74ab3",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "0b0cbbd9c6516cb2",
+  "guidelinesAfterSha": "c44bac8bd24a8edd",
+  "seconds": 71,
+  "finishedAt": "2026-10-09T20:23:27.538Z"
+}

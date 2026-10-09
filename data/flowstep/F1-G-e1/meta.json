@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "edit",
+    "id": "F1-G-e1",
+    "base": "F1-G",
+    "step": 1,
+    "message": "Add a dismissible promotional banner near the top of each screen.",
+    "phase": "test"
+  },
+  "fileId": "83feaea0-6dc4-4cb7-a47b-6e14695e1b02",
+  "targets": [
+    "adb4d9a9-b40f-4f30-ba74-76c146ecd19e",
+    "2a640c51-c4b1-407c-81f6-9009e48be054",
+    "8b285dbb-6b3f-42bc-8441-abdac3256fe7"
+  ],
+  "screenIds": [
+    "adb4d9a9-b40f-4f30-ba74-76c146ecd19e",
+    "2a640c51-c4b1-407c-81f6-9009e48be054",
+    "8b285dbb-6b3f-42bc-8441-abdac3256fe7"
+  ],
+  "screens": [
+    {
+      "screenId": "adb4d9a9-b40f-4f30-ba74-76c146ecd19e",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "2a640c51-c4b1-407c-81f6-9009e48be054",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "8b285dbb-6b3f-42bc-8441-abdac3256fe7",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesAfterSha": "1e17559f88ee6054",
+  "seconds": 47,
+  "finishedAt": "2026-10-09T20:36:58.606Z"
+}

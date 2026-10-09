@@ -1,0 +1,678 @@
+{
+  "id": "F1-G-e2",
+  "job": {
+    "kind": "edit",
+    "id": "F1-G-e2",
+    "base": "F1-G",
+    "step": 2,
+    "message": "Add a secondary text action below the main call to action on each screen.",
+    "phase": "test"
+  },
+  "brand": "fjord",
+  "arm": "G",
+  "calibration": {
+    "vars": {
+      "--font-sans": "\"Inter\", ui-sans-serif, system-ui, sans-serif",
+      "--background": "#ffffff",
+      "--primary": "#006b6a",
+      "--foreground": "#001b1b",
+      "--primary-foreground": "#ffffff",
+      "--border": "#cedfde",
+      "--muted-foreground": "#466464",
+      "--muted": "#eef6f6",
+      "--secondary": "#dff1f0",
+      "--secondary-foreground": "#003d3c",
+      "--accent": "#e79c27",
+      "--destructive": "#901211"
+    },
+    "font": "Inter",
+    "serif": null,
+    "agreement": {
+      "--background": 0.9928075773691941,
+      "--primary": 0.9832673771326295,
+      "--foreground": 0.543222891566265,
+      "--primary-foreground": 0.48443223443223443,
+      "--border": 1,
+      "--muted-foreground": 0.46686746987951805,
+      "--muted": 0.9891749164594443,
+      "--secondary": 0.9952895313895882,
+      "--secondary-foreground": 0.8506151142355008,
+      "--accent": 1,
+      "--destructive": 1
+    },
+    "support": {
+      "--background": 631776,
+      "--primary": 60899,
+      "--foreground": 6640,
+      "--primary-foreground": 1092,
+      "--border": 2750,
+      "--muted-foreground": 1328,
+      "--muted": 383646,
+      "--secondary": 24626,
+      "--secondary-foreground": 569,
+      "--accent": 572,
+      "--destructive": 260
+    },
+    "diff": [
+      0.028342270341655568,
+      0.02291605430179518,
+      0.01925896831631317
+    ],
+    "l1": [
+      5.24617188656261,
+      4.030426822851461,
+      3.892601320880975
+    ]
+  },
+  "screens": [
+    {
+      "screen": 1,
+      "screenId": "adb4d9a9-b40f-4f30-ba74-76c146ecd19e",
+      "before": {
+        "color": {
+          "n": 60,
+          "on": 36,
+          "rate": 0.6
+        },
+        "colorLenient": {
+          "n": 60,
+          "on": 36,
+          "rate": 0.6
+        },
+        "type": {
+          "n": 72,
+          "on": 72,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 66,
+          "on": 66,
+          "rate": 1
+        },
+        "radius": {
+          "n": 6,
+          "on": 0,
+          "rate": 0
+        },
+        "overall": {
+          "n": 204,
+          "on": 174,
+          "rate": 0.8529411764705882
+        },
+        "contrastN": 36,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 60,
+          "on": 60,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 60,
+          "on": 60,
+          "rate": 1
+        },
+        "type": {
+          "n": 72,
+          "on": 72,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 66,
+          "on": 66,
+          "rate": 1
+        },
+        "radius": {
+          "n": 6,
+          "on": 6,
+          "rate": 1
+        },
+        "overall": {
+          "n": 204,
+          "on": 204,
+          "rate": 1
+        },
+        "contrastN": 36,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.8339903037169085,
+      "pixelOursBefore": 0.8341442209626991,
+      "pixelOursAfter": 1,
+      "changed": 0.1866724728758951,
+      "changedVisible": 0,
+      "passes": 1,
+      "editedNodes": 15,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        }
+      ]
+    },
+    {
+      "screen": 2,
+      "screenId": "2a640c51-c4b1-407c-81f6-9009e48be054",
+      "before": {
+        "color": {
+          "n": 47,
+          "on": 25,
+          "rate": 0.5319148936170213
+        },
+        "colorLenient": {
+          "n": 47,
+          "on": 25,
+          "rate": 0.5319148936170213
+        },
+        "type": {
+          "n": 56,
+          "on": 56,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 76,
+          "on": 76,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 2,
+          "rate": 0.4
+        },
+        "overall": {
+          "n": 184,
+          "on": 159,
+          "rate": 0.8641304347826086
+        },
+        "contrastN": 28,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 47,
+          "on": 47,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 47,
+          "on": 47,
+          "rate": 1
+        },
+        "type": {
+          "n": 56,
+          "on": 56,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 76,
+          "on": 76,
+          "rate": 1
+        },
+        "radius": {
+          "n": 5,
+          "on": 5,
+          "rate": 1
+        },
+        "overall": {
+          "n": 184,
+          "on": 184,
+          "rate": 1
+        },
+        "contrastN": 28,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9912517075544078,
+      "pixelOursBefore": 0.9913636761597439,
+      "pixelOursAfter": 1,
+      "changed": 0.045075497784599974,
+      "changedVisible": 0,
+      "passes": 1,
+      "editedNodes": 11,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#901211"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        }
+      ]
+    },
+    {
+      "screen": 3,
+      "screenId": "8b285dbb-6b3f-42bc-8441-abdac3256fe7",
+      "before": {
+        "color": {
+          "n": 65,
+          "on": 32,
+          "rate": 0.49230769230769234
+        },
+        "colorLenient": {
+          "n": 65,
+          "on": 32,
+          "rate": 0.49230769230769234
+        },
+        "type": {
+          "n": 66,
+          "on": 66,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 61,
+          "on": 61,
+          "rate": 1
+        },
+        "radius": {
+          "n": 4,
+          "on": 3,
+          "rate": 0.75
+        },
+        "overall": {
+          "n": 196,
+          "on": 162,
+          "rate": 0.826530612244898
+        },
+        "contrastN": 33,
+        "contrastFail": 0,
+        "allOn": false
+      },
+      "after": {
+        "color": {
+          "n": 65,
+          "on": 65,
+          "rate": 1
+        },
+        "colorLenient": {
+          "n": 65,
+          "on": 65,
+          "rate": 1
+        },
+        "type": {
+          "n": 66,
+          "on": 66,
+          "rate": 1
+        },
+        "spacing": {
+          "n": 61,
+          "on": 61,
+          "rate": 1
+        },
+        "radius": {
+          "n": 4,
+          "on": 4,
+          "rate": 1
+        },
+        "overall": {
+          "n": 196,
+          "on": 196,
+          "rate": 1
+        },
+        "contrastN": 33,
+        "contrastFail": 0,
+        "allOn": true
+      },
+      "pixelBefore": 0.9837417689735631,
+      "pixelOursBefore": 0.9839934609878221,
+      "pixelOursAfter": 0.9935014955084603,
+      "changed": 0.04191542288557214,
+      "changedVisible": 0.0005673387448721306,
+      "passes": 1,
+      "editedNodes": 16,
+      "unrepairable": 0,
+      "offTokenExamples": [
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "radius/radius",
+          "value": "8px"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/icon-fill",
+          "value": "#000000"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#e79c27"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#e79c27"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#901211"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#901211"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/bg",
+          "value": "#003d3c"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/text",
+          "value": "#001b1b"
+        },
+        {
+          "kind": "color/icon",
+          "value": "#006b6a"
+        },
+        {
+          "kind": "color/text",
+          "value": "#006b6a"
+        }
+      ]
+    }
+  ],
+  "seconds": 52
+}

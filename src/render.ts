@@ -244,13 +244,13 @@ export class Renderer {
    * size then comes from its own PNG). opts.vars overrides theme variables, e.g. a theme
    * recovered from Flowstep's render by calibrate.ts.
    */
-  async render(src: string, opts: { width?: number; height?: number; vars?: Record<string, string> } = {}): Promise<Rendered> {
+  async render(src: string, opts: { width?: number; height?: number; vars?: Record<string, string>; fonts?: string[] } = {}): Promise<Rendered> {
     if (!this.page) await this.open();
     const screen = parseScreen(src);
     const { html, unknown } = toHtml(screen);
     const width = opts.width ?? (Number(screen.meta.width) || 375);
     const minH = opts.height ?? (Number(screen.meta.height) || 0);
-    const fonts = (this.opts.fonts ?? ["Inter"]).map((f) => `family=${encodeURIComponent(f).replace(/%20/g, "+")}:wght@300..800`).join("&");
+    const fonts = (opts.fonts ?? this.opts.fonts ?? ["Inter"]).map((f) => `family=${encodeURIComponent(f).replace(/%20/g, "+")}:wght@300..800`).join("&");
     const doc =
       `<!doctype html><html><head><meta charset="utf-8">` +
       (fonts ? `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?${fonts}&display=block">` : "") +
