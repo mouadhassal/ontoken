@@ -1,0 +1,35 @@
+{
+  "plan": {
+    "name": "Trial",
+    "code": "trial",
+    "type": "free"
+  },
+  "subscription": {
+    "isPaid": false,
+    "isTrial": true,
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-11",
+    "trialDaysRemaining": 2
+  },
+  "limits": {
+    "messages": {
+      "unlimited": false,
+      "monthly": {
+        "max": 15,
+        "warn": 10
+      }
+    }
+  },
+  "usage": {
+    "messages": {
+      "daily": 0,
+      "monthly": 0
+    }
+  },
+  "remaining": {
+    "messages": {
+      "daily": null,
+      "monthly": 15
+    }
+  }
+}

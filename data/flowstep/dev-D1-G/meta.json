@@ -1,0 +1,49 @@
+{
+  "job": {
+    "kind": "generate",
+    "id": "dev-D1-G",
+    "brief": {
+      "id": "D1",
+      "brand": "fjord",
+      "platform": "mobile",
+      "prompt": "Generate 3 mobile app screens for a banking app sign-in: email and password sign-in, a two-step verification code entry, and a welcome-back home screen. Do not ask clarifying questions; make reasonable assumptions."
+    },
+    "arm": "G",
+    "phase": "dev"
+  },
+  "fileId": "e7609fe0-6266-4029-a4dc-7441604b666d",
+  "screenIds": [
+    "3e49a0ba-129f-49f8-a80e-b87e450b0aab",
+    "613e1995-ce8e-47fe-b95b-41d9406eeca7",
+    "3c2ec42e-0a49-49ba-8426-6b2423d6f2d8"
+  ],
+  "screens": [
+    {
+      "screenId": "3e49a0ba-129f-49f8-a80e-b87e450b0aab",
+      "jsx": "s1.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "613e1995-ce8e-47fe-b95b-41d9406eeca7",
+      "jsx": "s2.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    },
+    {
+      "screenId": "3c2ec42e-0a49-49ba-8426-6b2423d6f2d8",
+      "jsx": "s3.jsx",
+      "png": true,
+      "screenType": "mobile_ios",
+      "colorTheme": "default"
+    }
+  ],
+  "attempts": 1,
+  "designGuidelinesUpdated": null,
+  "guidelinesSetSha": "cf478d219aa512c7",
+  "guidelinesAfterSha": "1e17559f88ee6054",
+  "seconds": 58,
+  "finishedAt": "2026-10-09T19:36:05.673Z"
+}

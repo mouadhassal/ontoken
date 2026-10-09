@@ -1,0 +1,2482 @@
+[
+  {
+    "name": "list-files",
+    "title": "List Files",
+    "description": "List metadata for the current user's Flowstep files. Call this first to check if a relevant file already exists. No screen content — use get-screen-image or get-screen-jsx.\n\nReturns { files: [{ id, name, created_at, updated_at, organisation_id, shared_with_me, owner, url }] }. Default order is newest created_at first; orderByCreation false is newest updated_at first.\n\n- owner: true if the caller created the file.\n- shared_with_me: shared with the caller directly, not only via the organisation.\n- url: opens the file in the Flowstep editor.\n\nA full page may mean more files exist — fetch the next page with offset.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "orderByCreation": {
+          "description": "Sort newest first by created_at (true) or updated_at (false). Use false to find recently edited files.",
+          "default": true,
+          "type": "boolean"
+        },
+        "limit": {
+          "description": "Maximum files returned. A full page may mean more exist — fetch the next page with offset.",
+          "default": 20,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "offset": {
+          "description": "Files to skip. Next page is offset + limit.",
+          "default": 0,
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              "name": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "boolean"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "organisation_id": {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              "shared_with_me": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "created_at",
+              "updated_at",
+              "owner",
+              "url",
+              "organisation_id",
+              "shared_with_me"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get-file",
+    "title": "Get File",
+    "description": "Get metadata for one of the current user's Flowstep files. No screen content — use get-screen-image or get-screen-jsx.\n\nReturns { file: { id, name, created_at, updated_at, project_id, access_level, visibility, owner, url }, user_access_level }.\n\n- owner: true if the caller created the file.\n- url: opens the file in the Flowstep editor.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "boolean"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "project_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "access_level": {
+              "type": "string",
+              "enum": [
+                "private",
+                "read",
+                "write"
+              ]
+            },
+            "visibility": {
+              "type": "string",
+              "enum": [
+                "private",
+                "member",
+                "public"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "created_at",
+            "updated_at",
+            "owner",
+            "url",
+            "project_id",
+            "access_level",
+            "visibility"
+          ],
+          "additionalProperties": false
+        },
+        "user_access_level": {
+          "type": "string",
+          "enum": [
+            "read",
+            "write"
+          ]
+        }
+      },
+      "required": [
+        "file",
+        "user_access_level"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create-file",
+    "title": "Create File",
+    "description": "Create a blank Flowstep file for the current user, with no screens. Prefer ai-generate-screens without a fileId when you also want screens generated. Use this only for code-first workflows, then add-screen-jsx.\n\nReturns { file: { id, name, created_at, updated_at, project_id, access_level, visibility, owner, url }, user_access_level }.\n\n- owner: always true (the caller created the file).\n- user_access_level: always \"write\".\n- url: opens the file in the Flowstep editor.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Display name of the new file.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "boolean",
+              "const": true
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "project_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "access_level": {
+              "type": "string",
+              "enum": [
+                "private",
+                "read",
+                "write"
+              ]
+            },
+            "visibility": {
+              "type": "string",
+              "enum": [
+                "private",
+                "member",
+                "public"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "created_at",
+            "updated_at",
+            "owner",
+            "url",
+            "project_id",
+            "access_level",
+            "visibility"
+          ],
+          "additionalProperties": false
+        },
+        "user_access_level": {
+          "type": "string",
+          "const": "write"
+        }
+      },
+      "required": [
+        "file",
+        "user_access_level"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "update-file",
+    "title": "Update File",
+    "description": "Rename one of the current user's Flowstep files.\n\nReturns { file: { id, name, created_at, updated_at, project_id, access_level, visibility, owner, url }, user_access_level }.\n\n- owner: true if the caller created the file.\n- url: opens the file in the Flowstep editor.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "description": "New display name.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "boolean"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "project_id": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "access_level": {
+              "type": "string",
+              "enum": [
+                "private",
+                "read",
+                "write"
+              ]
+            },
+            "visibility": {
+              "type": "string",
+              "enum": [
+                "private",
+                "member",
+                "public"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "created_at",
+            "updated_at",
+            "owner",
+            "url",
+            "project_id",
+            "access_level",
+            "visibility"
+          ],
+          "additionalProperties": false
+        },
+        "user_access_level": {
+          "type": "string",
+          "enum": [
+            "read",
+            "write"
+          ]
+        }
+      },
+      "required": [
+        "file",
+        "user_access_level"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "delete-file",
+    "title": "Delete File",
+    "description": "Permanently delete one of the current user's Flowstep files. Confirm with the user first. name must match the current display name or deletion is aborted.\n\nReturns { deleted: true }.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "description": "Current display name. Must match or deletion is aborted.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "deleted": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": [
+        "deleted"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list-screens",
+    "title": "List Screens",
+    "description": "List metadata for screens in one of the current user's Flowstep files. Call this after list-files to see what's already in the file. No rendered preview or JSX — use get-screen-image or get-screen-jsx.\n\nReturns { screens: [{ screenId, name, prompt, fidelity }] }.\n\n- prompt: last generation prompt; empty if the screen was never generated.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "screens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "screenId": {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              "name": {
+                "type": "string"
+              },
+              "prompt": {
+                "type": "string"
+              },
+              "fidelity": {
+                "type": "string",
+                "enum": [
+                  "lofi",
+                  "hifi",
+                  "ui"
+                ]
+              }
+            },
+            "required": [
+              "screenId",
+              "name",
+              "prompt",
+              "fidelity"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "screens"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get-screen-image",
+    "title": "Get Screen Image",
+    "description": "Get a rendered PNG of a screen in one of the current user's Flowstep files. No JSX — use get-screen-jsx. Call this once for each screenId returned by ai-generate-screens, ai-edit-screens, ai-generate-screen-variant, ai-edit-screen-variant, add-screen-jsx, or replace-screen-jsx, and for import-figma when screenId is set. If import-figma returned null, call list-screens first, then this once per new screenId. Then stop and show the user.\n\nReturns { type: \"image\", mimeType: \"image/png\", data }.\n\n- mimeType: always \"image/png\".\n- data: standard base64 of the PNG bytes, not a data URI.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Screen identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get-screen-jsx",
+    "title": "Get Screen JSX",
+    "description": "Get a screen's JSX and metadata from one of the current user's Flowstep files. No rendered preview — use get-screen-image. Set includeIds when you need element data-id values in jsx to pass in elementIds for ai-generate-screens (visual reference) or ai-edit-screens (edit scope).\n\nReturns { fileId, screenId, name, prompt, fidelity, screenType, colorTheme, jsx, fragments }.\n\n- jsx: markup only. data-id is included only when includeIds is true.\n- prompt: last generation prompt; empty if the screen was never generated.\n- fragments: shared chrome (e.g., nav, header, logo) stored on the screen. Empty when none. Pass them back on replace-screen-jsx to keep or update them.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Screen identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "includeIds": {
+          "description": "Include data-id on elements in the jsx output.",
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "fidelity": {
+          "type": "string",
+          "enum": [
+            "lofi",
+            "hifi",
+            "ui"
+          ]
+        },
+        "screenType": {
+          "type": "string",
+          "enum": [
+            "web",
+            "desktop",
+            "desktop-large",
+            "desktop-medium",
+            "desktop-small",
+            "tablet",
+            "ipad-tablet-horizontal",
+            "ipad-tablet-vertical",
+            "android-tablet-horizontal",
+            "android-tablet-vertical",
+            "mobile_ios",
+            "mobile_android",
+            "iphone-vertical",
+            "iphone-horizontal",
+            "iphone-x-vertical",
+            "iphone-x-horizontal",
+            "android-vertical",
+            "android-horizontal",
+            "android-small-vertical",
+            "android-small-horizontal"
+          ]
+        },
+        "colorTheme": {
+          "type": "string",
+          "enum": [
+            "blue",
+            "blueDark",
+            "default",
+            "defaultDark",
+            "ice",
+            "iceDark",
+            "grayscale",
+            "grayscaleDark",
+            "green",
+            "greenDark",
+            "orange",
+            "orangeDark",
+            "red",
+            "redDark",
+            "rose",
+            "roseDark",
+            "violet",
+            "violetDark",
+            "yellow",
+            "yellowDark"
+          ]
+        },
+        "jsx": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fragments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "purpose": {
+                "type": "string"
+              },
+              "markup": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "purpose",
+              "markup"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId",
+        "name",
+        "prompt",
+        "fidelity",
+        "screenType",
+        "colorTheme",
+        "jsx",
+        "fragments"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "add-screen-jsx",
+    "title": "Add Screen JSX",
+    "description": "Add a screen's JSX and metadata to one of the current user's Flowstep files. Code-first only — use ai-generate-screens for AI-generated screens. Always creates a new screen: use replace-screen-jsx to overwrite an existing one from JSX, ai-edit-screens for a free-form AI change, or ai-edit-screen-variant for a preset AI change. When the new screen is based on an existing one, start from get-screen-jsx (without includeIds) for name, fidelity, screenType, colorTheme, and jsx, then change whatever should differ.\n\nReturns { fileId, screenId }. After adding, call get-screen-image with screenId to view the result.\n\n- jsx: markup only. data-id is ignored; the new screen gets new element ids.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "description": "Display name of the new screen. Omit to auto-name the screen as Screen {N}.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "fidelity": {
+          "description": "Screen fidelity.",
+          "default": "ui",
+          "type": "string",
+          "enum": [
+            "lofi",
+            "hifi",
+            "ui"
+          ]
+        },
+        "screenType": {
+          "description": "Screen type.",
+          "type": "string",
+          "enum": [
+            "web",
+            "desktop",
+            "desktop-large",
+            "desktop-medium",
+            "desktop-small",
+            "tablet",
+            "ipad-tablet-horizontal",
+            "ipad-tablet-vertical",
+            "android-tablet-horizontal",
+            "android-tablet-vertical",
+            "mobile_ios",
+            "mobile_android",
+            "iphone-vertical",
+            "iphone-horizontal",
+            "iphone-x-vertical",
+            "iphone-x-horizontal",
+            "android-vertical",
+            "android-horizontal",
+            "android-small-vertical",
+            "android-small-horizontal"
+          ]
+        },
+        "colorTheme": {
+          "description": "Color theme.",
+          "default": "default",
+          "type": "string",
+          "enum": [
+            "blue",
+            "blueDark",
+            "default",
+            "defaultDark",
+            "ice",
+            "iceDark",
+            "grayscale",
+            "grayscaleDark",
+            "green",
+            "greenDark",
+            "orange",
+            "orangeDark",
+            "red",
+            "redDark",
+            "rose",
+            "roseDark",
+            "violet",
+            "violetDark",
+            "yellow",
+            "yellowDark"
+          ]
+        },
+        "jsx": {
+          "description": "JSX markup only.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "fileId",
+        "screenType",
+        "jsx"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "replace-screen-jsx",
+    "title": "Replace Screen JSX",
+    "description": "Replace an existing screen's JSX and metadata in one of the current user's Flowstep files. Code-first only — use ai-edit-screens for a free-form AI change or ai-edit-screen-variant for a preset AI change. Use add-screen-jsx to create a new screen instead. Start from get-screen-jsx (without includeIds) for name, fidelity, screenType, colorTheme, jsx, and fragments, then change whatever should differ. Omit those fields to keep the current values. Pass fragments: [] to clear stored shared chrome.\n\nReturns { fileId, screenId }. After replacing, call get-screen-image with screenId to view the result.\n\n- jsx: markup only. data-id is ignored; nested elements get new ids.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Screen identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "description": "Display name. Omit to keep the current name.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "fidelity": {
+          "description": "Screen fidelity. Omit to keep the current fidelity.",
+          "type": "string",
+          "enum": [
+            "lofi",
+            "hifi",
+            "ui"
+          ]
+        },
+        "screenType": {
+          "description": "Screen type. Omit to keep the current type.",
+          "type": "string",
+          "enum": [
+            "web",
+            "desktop",
+            "desktop-large",
+            "desktop-medium",
+            "desktop-small",
+            "tablet",
+            "ipad-tablet-horizontal",
+            "ipad-tablet-vertical",
+            "android-tablet-horizontal",
+            "android-tablet-vertical",
+            "mobile_ios",
+            "mobile_android",
+            "iphone-vertical",
+            "iphone-horizontal",
+            "iphone-x-vertical",
+            "iphone-x-horizontal",
+            "android-vertical",
+            "android-horizontal",
+            "android-small-vertical",
+            "android-small-horizontal"
+          ]
+        },
+        "colorTheme": {
+          "description": "Color theme. Omit to keep the current theme.",
+          "type": "string",
+          "enum": [
+            "blue",
+            "blueDark",
+            "default",
+            "defaultDark",
+            "ice",
+            "iceDark",
+            "grayscale",
+            "grayscaleDark",
+            "green",
+            "greenDark",
+            "orange",
+            "orangeDark",
+            "red",
+            "redDark",
+            "rose",
+            "roseDark",
+            "violet",
+            "violetDark",
+            "yellow",
+            "yellowDark"
+          ]
+        },
+        "jsx": {
+          "description": "JSX markup only.",
+          "type": "string",
+          "minLength": 1
+        },
+        "fragments": {
+          "description": "Shared chrome fragments from get-screen-jsx. Omit to keep the current fragments. Pass [] to clear them.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "purpose": {
+                "type": "string"
+              },
+              "markup": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "purpose",
+              "markup"
+            ]
+          }
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId",
+        "jsx"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "rename-screen",
+    "title": "Rename Screen",
+    "description": "Rename a screen's canvas label in one of the current user's Flowstep files. Does not change layout, size, or content — use ai-edit-screens for that.\n\nReturns { screenId, name }.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Screen identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "description": "New display name.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId",
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "screenId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "screenId",
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "delete-screen",
+    "title": "Delete Screen",
+    "description": "Permanently delete a screen from one of the current user's Flowstep files. Confirm with the user first. name must match the current display name or deletion is aborted.\n\nReturns { deleted: true }.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Screen identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "name": {
+          "description": "Current display name. Must match or deletion is aborted.",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId",
+        "name"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "deleted": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": [
+        "deleted"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get-design-guidelines",
+    "title": "Get Design Guidelines",
+    "description": "Get the design guidelines attached to one of the current user's Flowstep files. When set, they are injected into AI generation for that file.\n\nReturns { guidelines }.\n\n- guidelines: DESIGN.md text, or null if none has been set.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "guidelines": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "guidelines"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "update-design-guidelines",
+    "title": "Update Design Guidelines",
+    "description": "Set or replace the design guidelines for one of the current user's Flowstep files. designGuidelines must be a plain string of the raw text — not an object or JSON. If reading from a file, pass that file's text. Use delete-design-guidelines to clear them.\n\nReturns { updated, warnings? }.\n\n- warnings: soft-validation issues (unknown keys, non-hex colors) that were accepted; surface these to the user. Omitted when none.\n\nValidation fails if frontmatter is opened but not closed, if frontmatter lines are not valid block-style YAML, or if the markdown body contains duplicate ## section headings.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "designGuidelines": {
+          "description": "Design guidelines in Google DESIGN.md format (https://github.com/google-labs-code/design.md).",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "fileId",
+        "designGuidelines"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "updated": {
+          "type": "boolean",
+          "const": true
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "updated"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "delete-design-guidelines",
+    "title": "Delete Design Guidelines",
+    "description": "Delete the design guidelines from one of the current user's Flowstep files. Deleting missing guidelines is a no-op.\n\nReturns { deleted: true }.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "deleted": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "required": [
+        "deleted"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get-chat-history",
+    "title": "Get Chat History",
+    "description": "Get the chat history for one of the current user's Flowstep files. This is the design conversation associated with the file, not this MCP client's conversation. Use it to resume prior work on the file. Not a substitute for list-screens or get-design-guidelines.\n\nReturns { messages }.\n\n- messages: empty when this user has no design conversation associated with the file.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        }
+      },
+      "required": [
+        "fileId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "request"
+                    ]
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "success"
+                    ]
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "author": {
+                    "type": "string",
+                    "enum": [
+                      "human"
+                    ]
+                  },
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "text"
+                    ]
+                  },
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "targets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "target_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                        }
+                      },
+                      "required": [
+                        "target_id"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "uuid",
+                              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "document"
+                              ]
+                            },
+                            "path": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "name": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type",
+                            "path",
+                            "name",
+                            "url"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "uuid",
+                              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "image"
+                              ]
+                            },
+                            "path": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "name": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type",
+                            "path",
+                            "name",
+                            "url"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "format": "uuid",
+                              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "link"
+                              ]
+                            },
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "type",
+                            "url"
+                          ],
+                          "additionalProperties": false
+                        }
+                      ]
+                    }
+                  },
+                  "agentSteps": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "requestMessageId": {
+                          "type": "string",
+                          "format": "uuid",
+                          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                        },
+                        "sequence": {
+                          "type": "number"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "pending",
+                            "running",
+                            "done",
+                            "error"
+                          ]
+                        },
+                        "parentId": {
+                          "type": "string"
+                        },
+                        "dropped": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "requestMessageId",
+                        "sequence",
+                        "label",
+                        "status"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "status",
+                  "content",
+                  "author",
+                  "sequence",
+                  "content_type"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "response"
+                    ]
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "author": {
+                    "type": "string",
+                    "enum": [
+                      "ai",
+                      "system"
+                    ]
+                  },
+                  "sequence": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "created_at": {
+                    "type": "string"
+                  },
+                  "request_message_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "summary",
+                      "text",
+                      "followup"
+                    ]
+                  },
+                  "targets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "target_id": {
+                          "type": "string",
+                          "format": "uuid",
+                          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                        }
+                      },
+                      "required": [
+                        "target_id"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "generatedScreens": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "answerId": {
+                          "type": "string",
+                          "format": "uuid",
+                          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                        },
+                        "screenId": {
+                          "type": "string",
+                          "format": "uuid",
+                          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                        },
+                        "screenName": {
+                          "type": "string"
+                        },
+                        "thumbnailUrl": {
+                          "type": "string",
+                          "format": "uri"
+                        },
+                        "width": {
+                          "type": "number"
+                        },
+                        "height": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "answerId",
+                        "screenId",
+                        "screenName",
+                        "thumbnailUrl",
+                        "width",
+                        "height"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "designGuidelinesUpdated": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "success",
+                      "info",
+                      "abort",
+                      "error",
+                      "limit_reached"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "content",
+                  "author",
+                  "sequence",
+                  "content_type",
+                  "status"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "messages"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "upload-attachment",
+    "title": "Upload Attachment",
+    "description": "Upload a reference file for ai-generate-screens or ai-edit-screens. Bytes never pass through the LLM; this tool does not fetch URLs. Not used by ai-generate-screen-variant or ai-edit-screen-variant.\n\nUse exactly one mode:\n\nA. mimeType + fileName — prepare a signed PUT. fileName is the original name with extension (e.g. cat.png, design.md). For a remote URL, use the URL basename or a descriptive name with the correct extension. Replace LOCAL_FILE_PATH in uploadCommand with an absolute path, run that curl (exit 0), then pass only { id, path, type } into the design tool. Skipping the curl leaves storage empty. Max 3 MB.\n   Conversation-attached or workspace file: use that path. Remote http(s) URL: download locally first, then Mode A. Never pass the URL as LOCAL_FILE_PATH or as type:image.\n\nB. text + mimeType — text/markdown, text/plain, text/javascript only. No curl. Do not use text for images or PDFs. If longer than the text field allows, use Mode A.\n\nReturns { id, path, type, mimeType, signedUrl?, uploadCommand?, nextStep? }.\n\n- type: \"image\" or \"document\".\n- signedUrl, uploadCommand, nextStep: set only on Mode A. Do not pass them into design tools.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "mimeType": {
+          "description": "Attachment MIME type.",
+          "type": "string",
+          "enum": [
+            "application/pdf",
+            "text/markdown",
+            "text/plain",
+            "text/javascript",
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+          ]
+        },
+        "fileName": {
+          "description": "Original file name with extension.",
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "description": "Plain text, max 64,000 characters.",
+          "type": "string",
+          "maxLength": 64000
+        }
+      },
+      "required": [
+        "mimeType"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "path": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "image",
+            "document"
+          ]
+        },
+        "mimeType": {
+          "type": "string",
+          "enum": [
+            "application/pdf",
+            "text/markdown",
+            "text/plain",
+            "text/javascript",
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+          ]
+        },
+        "signedUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "uploadCommand": {
+          "type": "string"
+        },
+        "nextStep": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "path",
+        "type",
+        "mimeType"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "import-figma",
+    "title": "Import Figma",
+    "description": "Import a Figma frame into one of the current user's Flowstep files as editable canvas elements. The file's organisation must have Figma connected. Each import adds a new screen — importing the same frame twice gives two screens, so delete the old one if you meant to replace it. When screenId is set, call get-screen-image once with it, then stop. When screenId is null, call list-screens and then get-screen-image once per new screenId.\n\nReturns { fileId, screenId, frameCount? }.\n\n- screenId: imported screen, or null when a page URL imported multiple frames.\n- frameCount: set only on that page-fallback path.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "Flowstep file identifier. Not the Figma file key in figmaUrl.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "figmaUrl": {
+          "description": "Figma frame URL with a node-id. In Figma: right-click the frame → Copy/Paste as → Copy link to selection.",
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "required": [
+        "fileId",
+        "figmaUrl"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "frameCount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "get-plan-details",
+    "title": "Get Plan Details",
+    "description": "Get the current user's Flowstep plan, usage, and remaining quota.\n\nReturns { plan: { name, code, type }, subscription: { isPaid, isTrial, startDate, endDate, trialDaysRemaining }, limits, usage, remaining }.\n\n- plan.type: \"free\" or \"paid\".\n- remaining: quota left per feature (daily/monthly); omitted for unlimited features.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "description": "No parameters. Organisation is resolved from the authenticated user."
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "plan": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "free",
+                "paid"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "code",
+            "type"
+          ],
+          "additionalProperties": false
+        },
+        "subscription": {
+          "type": "object",
+          "properties": {
+            "isPaid": {
+              "type": "boolean"
+            },
+            "isTrial": {
+              "type": "boolean"
+            },
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "trialDaysRemaining": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "isPaid",
+            "isTrial",
+            "startDate",
+            "endDate",
+            "trialDaysRemaining"
+          ],
+          "additionalProperties": false
+        },
+        "limits": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "daily": {
+                "type": "object",
+                "properties": {
+                  "max": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "warn": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "max",
+                  "warn"
+                ],
+                "additionalProperties": false
+              },
+              "monthly": {
+                "type": "object",
+                "properties": {
+                  "max": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "warn": {
+                    "anyOf": [
+                      {
+                        "type": "number"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "max",
+                  "warn"
+                ],
+                "additionalProperties": false
+              },
+              "unlimited": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "unlimited"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "usage": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "daily": {
+                "type": "number"
+              },
+              "monthly": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "daily",
+              "monthly"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "remaining": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "daily": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "monthly": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "plan",
+        "subscription",
+        "limits",
+        "usage",
+        "remaining"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "ai-generate-screens",
+    "title": "AI Generate Screens",
+    "description": "Generate one or more brand-new screens from a text description. Omit fileId to start a new file; pass fileId to add screens to an existing one. Call list-files (and list-screens) first when the request could apply to a file the user already has — only omit fileId once none applies or they want to start over. Not an in-place change: use ai-edit-screens for a free-form AI change of existing screens, ai-generate-screen-variant for a next-step, error or empty state, or platform variant, or ai-edit-screen-variant for a preset edit or redesign of one screen. Use add-screen-jsx when you already have JSX for a new screen, replace-screen-jsx to overwrite an existing one — this tool always designs from the description and never reuses markup.\n\nelementIds are optional visual-reference screenIds (list-screens) and/or subelement data-ids (get-screen-jsx with includeIds) — style and layout inspiration for the new screens. They are not edited in place, and their JSX is not reused. fileId is required when elementIds is set. File attachments come from upload-attachment as { id, path, type }. Include webpage URLs in message.\n\nReturns { status, fileId, screenIds, designGuidelinesUpdated, reply? }. After a generated turn, call get-screen-image once per screenId, then stop.\n\n- status: \"generated\" when screens were built; \"chat\" when the agent replied without building (reply). screenIds is empty unless status is \"generated\". The host should ask the user itself if the brief is ambiguous.\n- designGuidelinesUpdated: change summary when DESIGN.md was auto-updated this turn; otherwise null.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier. Omit to create a new file. Required when elementIds is set.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "message": {
+          "description": "Text description of the screens to generate.",
+          "type": "string",
+          "minLength": 1
+        },
+        "elementIds": {
+          "description": "Visual-reference screenIds and/or subelement data-ids. Not edited in place.",
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "attachments": {
+          "description": "Files from upload-attachment.",
+          "default": [],
+          "maxItems": 5,
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "image"
+                    ]
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "path"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "document"
+                    ]
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "generated",
+            "chat"
+          ]
+        },
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "designGuidelinesUpdated": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reply": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "fileId",
+        "screenIds",
+        "designGuidelinesUpdated"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ai-edit-screens",
+    "title": "AI Edit Screens",
+    "description": "Modify one or more existing screens in place from a text instruction — theming, copy, layout, or coordinated changes across screens. Not a new screen: use ai-generate-screens to generate screens or ai-generate-screen-variant for a next-step, error or empty state, or platform variant of one screen. Prefer ai-edit-screen-variant when applying a preset to one whole screen. Use replace-screen-jsx to overwrite a screen from JSX you already have.\n\nelementIds is one or more screenIds from list-screens and/or subelement data-ids from get-screen-jsx (includeIds). A screen id edits the whole screen. File attachments come from upload-attachment as { id, path, type }. Include webpage URLs in message.\n\nReturns { status, fileId, screenIds, designGuidelinesUpdated, reply? }. After a generated turn, call get-screen-image once per screenId, then stop.\n\n- status: \"generated\" when screens were built; \"chat\" when the agent replied without building (reply). screenIds is empty unless status is \"generated\". The host should ask the user itself if the brief is ambiguous.\n- designGuidelinesUpdated: change summary when DESIGN.md was auto-updated this turn; otherwise null.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "message": {
+          "description": "Text description of the in-place changes.",
+          "type": "string",
+          "minLength": 1
+        },
+        "elementIds": {
+          "description": "ScreenIds and/or subelement data-ids to edit in place.",
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "attachments": {
+          "description": "Files from upload-attachment.",
+          "default": [],
+          "maxItems": 5,
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "image"
+                    ]
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "path"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "document"
+                    ]
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "type",
+                  "path"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "fileId",
+        "message",
+        "elementIds"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "generated",
+            "chat"
+          ]
+        },
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "designGuidelinesUpdated": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reply": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "fileId",
+        "screenIds",
+        "designGuidelinesUpdated"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ai-generate-screen-variant",
+    "title": "AI Generate Screen Variant",
+    "description": "Add a screen derived from exactly one existing screen — a next-step, error or empty state, or platform variant of that screen. Not an unrelated new screen and not an in-place change. Use ai-generate-screens with fileId for a screen that is not a variant of an existing one (e.g. add a settings screen). Use ai-edit-screens for a free-form AI change, or ai-edit-screen-variant for a preset AI edit or redesign of one screen.\n\nscreenId is one screenId from list-screens.\n\nReturns { status, fileId, screenIds, designGuidelinesUpdated }. After a generated turn, call get-screen-image once per screenId, then stop.\n\n- status: always \"generated\".\n- designGuidelinesUpdated: change summary when DESIGN.md was auto-updated this turn; otherwise null.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Existing screen to derive from.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "operationVariant": {
+          "description": "How the new screen relates to the existing one.",
+          "type": "string",
+          "enum": [
+            "next_screen",
+            "error_state",
+            "empty_state",
+            "web_version",
+            "mobile_version",
+            "tablet_version",
+            "mobile_ios_version",
+            "mobile_android_version"
+          ]
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId",
+        "operationVariant"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "generated"
+        },
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "designGuidelinesUpdated": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "fileId",
+        "screenIds",
+        "designGuidelinesUpdated"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ai-edit-screen-variant",
+    "title": "AI Edit Screen Variant",
+    "description": "Modify exactly one existing screen in place using a preset. Theme or polish it, try a different layout or visual style, or redesign it from scratch. Use ai-generate-screens for brand-new screens, ai-edit-screens for a free-form AI change or a precise subelement edit, and ai-generate-screen-variant to add a next-step, error or empty state, or platform variant.\n\nscreenId is one screenId from list-screens. operationVariant selects either an edit preset (dark_theme, light_theme, make_pretty) or a redesign preset (different_layout, different_style, from_scratch).\n\nReturns { status, fileId, screenIds, designGuidelinesUpdated }. After a generated turn, call get-screen-image once per screenId, then stop.\n\n- status: always \"generated\".\n- designGuidelinesUpdated: change summary when DESIGN.md was auto-updated this turn; otherwise null.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileId": {
+          "description": "File identifier.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenId": {
+          "description": "Existing screen to modify in place.",
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "operationVariant": {
+          "description": "Edit or redesign preset to apply to the screen.",
+          "type": "string",
+          "enum": [
+            "dark_theme",
+            "light_theme",
+            "make_pretty",
+            "different_layout",
+            "different_style",
+            "from_scratch"
+          ]
+        }
+      },
+      "required": [
+        "fileId",
+        "screenId",
+        "operationVariant"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema"
+    },
+    "outputSchema": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "generated"
+        },
+        "fileId": {
+          "type": "string",
+          "format": "uuid",
+          "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+        },
+        "screenIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          }
+        },
+        "designGuidelinesUpdated": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "fileId",
+        "screenIds",
+        "designGuidelinesUpdated"
+      ],
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  }
+]

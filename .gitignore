@@ -1,0 +1,8 @@
+node_modules/
+.secrets/
+outreach/
+proposal/
+00_BRIEF.md
+*.log
+.cache/
+paper/*.html
